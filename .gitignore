@@ -1,0 +1,37 @@
+# Environment variables
+.env
+.env.*
+
+!.env.example
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Rust / Tauri
+target/
+app/src-tauri/gen/
+
+# Build output
+dist/
+build/
+*.pyc
+venv/
+.venv/
+
+# Node.js
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local
+specs/

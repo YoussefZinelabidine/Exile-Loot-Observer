@@ -1,0 +1,67 @@
+:root {
+  --bg: #0b0d10;
+  --surface: #161a21;
+  --surface-input: #0f1217;
+  --border: #2a303b;
+  --border-strong: #3a414e;
+  --text: #e8eaed;
+  --text-2: #c9ced6;
+  --text-muted: #a3a9b5;
+  --text-faint: #8d94a1;
+  --accent: #9cc3ff;
+  --accent-hover: #c6dbff;
+  --keep: #4cc38a;
+  --price-check: #f0b455;
+  --price-check-border: #5a4826;
+  --demand-tier: #f2c66d;
+  --danger: #f28b82;
+
+  --radius-control: 8px;
+  --radius-panel: 12px;
+
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
