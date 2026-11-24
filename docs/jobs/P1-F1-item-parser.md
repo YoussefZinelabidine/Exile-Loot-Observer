@@ -1,6 +1,6 @@
 # P1-F1 · Item parser (app)
 
-- **Agent:** frontend and overlay agent (Sonnet) · **Status:** draft, waiting for owner approval and answers below
+- **Agent:** frontend and overlay agent (Sonnet) · **Status:** approved by owner 2026-11-24 ("proceed with the next phase"); questions answered (see "Owner decisions")
 - **Design sections:** Item scoring → step 1; What the user sees → Reading items; Implementation → Frontend 3; Data sources (Awakened PoE Trade)
 
 ## Goal
@@ -31,3 +31,11 @@
 ## Done when
 
 `pnpm check`, `pnpm test` pass with the golden items, and the reviewer passes it.
+
+## Owner decisions (2026-11-24)
+
+Q1 build for the advanced format; the in-game check is still pending (a follow-up adds the simple format if needed) · Q2 (a) reuse only Awakened PoE Trade's text-section helpers, MIT notice kept.
+
+## Also in this job: TypeScript snapshot types
+
+Generate types from `shared/schema/*.schema.json` with `json-schema-to-typescript` (dev dependency) into `app/src/lib/snapshot/types.generated.ts`, with a `pnpm gen:types` script and a Vitest test that fails if the file is out of date.

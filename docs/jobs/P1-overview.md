@@ -8,10 +8,13 @@ Phase 1 runs the three agents in parallel (design: "Order and parallel work"). E
 | [P1-B1 Database tables](P1-B1-database-tables.md) | Backend | Backend 1 (tables) | E0-b |
 | [P1-B2 Static data importers](P1-B2-static-data-importers.md) | Backend | Backend 3 | E0-b, P1-B1 (`data_versions`) |
 | [P1-B3 Item normaliser](P1-B3-item-normaliser.md) | Backend | Backend 6 | P1-B2 (parsed RePoE models), golden items |
+| [P1-B4 Python scoring engine](P1-B4-python-scoring-engine.md) | Backend | Validation prerequisite | P1-B2 (snapshot models) |
 | [P1-F1 Item parser](P1-F1-item-parser.md) | Frontend | Frontend 3 | E0-d, patch schema, golden items |
 | [P1-F2 Scoring engine](P1-F2-scoring-engine.md) | Frontend | Frontend 4 | P1-F1, daily schema, golden items |
 
 Frontend step 1 (skeleton) was done in E0-d.
+
+**Run order (owner decisions 2026-11-24):** wave 1 = P1-B1, P1-C1 (in-memory state store), P1-F1 · wave 2 = P1-B2, P1-C1b (Postgres state store), P1-F2 · wave 3 = P1-B3, P1-B4. All questions below were answered: see `docs/decisions.md`.
 
 ## Questions that affect several jobs
 

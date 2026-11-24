@@ -1,0 +1,144 @@
+[
+ {
+  "ids": [
+   "accuracy_rating"
+  ],
+  "English": [
+   {
+    "string": "{0} to Accuracy Rating",
+    "format": [
+     "+#"
+    ],
+    "condition": [
+     {
+      "min": null,
+      "max": null,
+      "negated": null
+     }
+    ],
+    "index_handlers": [
+     []
+    ]
+   }
+  ],
+  "trade_stats": [
+   {
+    "type": "crafted",
+    "id": "crafted.stat_803737631"
+   },
+   {
+    "type": "explicit",
+    "id": "explicit.stat_803737631"
+   },
+   {
+    "type": "fractured",
+    "id": "fractured.stat_803737631"
+   },
+   {
+    "type": "implicit",
+    "id": "implicit.stat_803737631"
+   }
+  ]
+ },
+ {
+  "ids": [
+   "base_chaos_damage_resistance_%"
+  ],
+  "English": [
+   {
+    "string": "{0}% to Chaos Resistance",
+    "format": [
+     "+#"
+    ],
+    "condition": [
+     {
+      "min": null,
+      "max": null,
+      "negated": null
+     }
+    ],
+    "index_handlers": [
+     []
+    ]
+   }
+  ],
+  "trade_stats": [
+   {
+    "type": "explicit",
+    "id": "explicit.stat_2923486259"
+   },
+   {
+    "type": "fractured",
+    "id": "fractured.stat_2923486259"
+   },
+   {
+    "type": "implicit",
+    "id": "implicit.stat_2923486259"
+   }
+  ]
+ },
+ {
+  "ids": [
+   "base_maximum_life"
+  ],
+  "English": [
+   {
+    "string": "{0} to maximum Life",
+    "format": [
+     "+#"
+    ],
+    "condition": [
+     {
+      "min": null,
+      "max": null,
+      "negated": null
+     }
+    ],
+    "index_handlers": [
+     []
+    ]
+   }
+  ],
+  "trade_stats": [
+   {
+    "type": "crafted",
+    "id": "crafted.stat_3299347043"
+   },
+   {
+    "type": "explicit",
+    "id": "explicit.stat_3299347043"
+   },
+   {
+    "type": "fractured",
+    "id": "fractured.stat_3299347043"
+   },
+   {
+    "type": "implicit",
+    "id": "implicit.stat_3299347043"
+   }
+  ]
+ },
+ {
+  "ids": [
+   "markup_example"
+  ],
+  "English": [
+   {
+    "string": "[Life|Maximum Life] and [Resistance|Resistances] near [Critical]",
+    "format": [
+     "#"
+    ],
+    "condition": [
+     {
+      "min": null,
+      "max": null,
+      "negated": null
+     }
+    ],
+    "index_handlers": [
+     []
+    ]
+   }
+  ]
+ }
+]

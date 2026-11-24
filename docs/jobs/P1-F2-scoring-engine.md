@@ -1,6 +1,6 @@
 # P1-F2 · Scoring engine (app)
 
-- **Agent:** frontend and overlay agent (Sonnet) · **Status:** draft, waiting for owner approval and answers below
+- **Agent:** frontend and overlay agent (Sonnet) · **Status:** approved by owner 2026-11-24 ("proceed with the next phase"); questions answered (see "Owner decisions")
 - **Design sections:** Relevance formula (tier gate); Item scoring and verdict; Where calculations run
 
 ## Goal
@@ -42,3 +42,8 @@ Implements exactly the rules the owner confirms from `shared/fixtures/README.md`
 ## Done when
 
 `pnpm check`, `pnpm test` pass with the golden items, and the reviewer passes it.
+
+## Owner decisions (2026-11-24)
+
+Q1 rules R1–R9 confirmed as proposed in `shared/fixtures/README.md` · Q2 (a) market demand sums archetype nodes only · Q3 (a) craftable discount multiplies `demand_low` in the numerator only.
+Not covered by any rule yet (do not implement; leave a clearly named TODO): stale-snapshot cap, influenced / synthesised / mirrored / double-corrupted flags, corruption implicits as extra mods.

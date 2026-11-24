@@ -32,6 +32,8 @@ class Settings(BaseSettings):
     contact_email: str | None = None
     project_url: str | None = None
 
+    data_dir: Path | None = None  # ELO_DATA_DIR: downloaded static data, outside the repo
+
     log_level: str = "INFO"
 
     @property

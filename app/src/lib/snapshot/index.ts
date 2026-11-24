@@ -1,3 +1,3 @@
 // Snapshot loading and types.
-// Empty for now: its types wait for the snapshot schema in shared/schema.
-export {};
+// Types are generated from shared/schema (`pnpm gen:types`); loading code comes in a later job.
+export * from "./types";

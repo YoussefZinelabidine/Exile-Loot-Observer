@@ -1,0 +1,671 @@
+{
+ "IncreasedLife7": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Virile",
+  "required_level": 44,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife6": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Rotund",
+  "required_level": 36,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 85,
+    "max": 99
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife5": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Robust",
+  "required_level": 30,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 70,
+    "max": 84
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife4": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Stout",
+  "required_level": 24,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 55,
+    "max": 69
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife3": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Stalwart",
+  "required_level": 18,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 40,
+    "max": 54
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife2": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Sanguine",
+  "required_level": 11,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 25,
+    "max": 39
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife1": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Healthy",
+  "required_level": 5,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 10,
+    "max": 24
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLife0": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Hale",
+  "required_level": 1,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 3,
+    "max": 9
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedAccuracyNew5_": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "IncreasedAccuracy",
+  "name": "of the Ranger",
+  "required_level": 75,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "accuracy_rating",
+    "min": 351,
+    "max": 480
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedAccuracyNew4": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "IncreasedAccuracy",
+  "name": "of the Marksman",
+  "required_level": 60,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "accuracy_rating",
+    "min": 251,
+    "max": 350
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedAccuracyNew3": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "IncreasedAccuracy",
+  "name": "of the Sniper",
+  "required_level": 40,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "accuracy_rating",
+    "min": 166,
+    "max": 250
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedAccuracyNew2": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "IncreasedAccuracy",
+  "name": "of Precision",
+  "required_level": 20,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "accuracy_rating",
+    "min": 100,
+    "max": 165
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedAccuracyNew1_": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "IncreasedAccuracy",
+  "name": "of Steadiness",
+  "required_level": 1,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 600
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "accuracy_rating",
+    "min": 50,
+    "max": 100
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "ChaosResist6": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "ChaosResistance",
+  "name": "of Bameth",
+  "required_level": 81,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 250
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_chaos_damage_resistance_%",
+    "min": 31,
+    "max": 35
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "ChaosResist5": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "ChaosResistance",
+  "name": "of Exile",
+  "required_level": 65,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 250
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_chaos_damage_resistance_%",
+    "min": 26,
+    "max": 30
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "ChaosResist4": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "ChaosResistance",
+  "name": "of Expulsion",
+  "required_level": 56,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 250
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_chaos_damage_resistance_%",
+    "min": 21,
+    "max": 25
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "ChaosResist3": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "ChaosResistance",
+  "name": "of Eviction",
+  "required_level": 44,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 250
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_chaos_damage_resistance_%",
+    "min": 16,
+    "max": 20
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "ChaosResist2": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "ChaosResistance",
+  "name": "of Banishment",
+  "required_level": 30,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 250
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_chaos_damage_resistance_%",
+    "min": 11,
+    "max": 15
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "ChaosResist1": {
+  "domain": "item",
+  "generation_type": "suffix",
+  "type": "ChaosResistance",
+  "name": "of the Lost",
+  "required_level": 16,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 250
+   },
+   {
+    "tag": "default",
+    "weight": 0
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_chaos_damage_resistance_%",
+    "min": 5,
+    "max": 10
+   }
+  ],
+  "is_essence_only": false,
+  "text": "+(1-2) to something"
+ },
+ "IncreasedLifeCrafted": {
+  "domain": "crafted",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Decoy",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "decoy"
+ },
+ "IncreasedLifeEssence": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Decoy",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": true,
+  "text": "decoy"
+ },
+ "IncreasedLifeRoyale1": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Royale",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "decoy"
+ },
+ "IncreasedLifeFirstTagZero": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Decoy",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 0
+   },
+   {
+    "tag": "default",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "decoy"
+ },
+ "IncreasedLifeOtherBase": {
+  "domain": "item",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Decoy",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "amulet",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "decoy"
+ },
+ "IncreasedLifeCorrupted": {
+  "domain": "item",
+  "generation_type": "corrupted",
+  "type": "IncreasedLife",
+  "name": "Decoy",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "decoy"
+ },
+ "IncreasedLifeFlask": {
+  "domain": "flask",
+  "generation_type": "prefix",
+  "type": "IncreasedLife",
+  "name": "Decoy",
+  "required_level": 99,
+  "spawn_weights": [
+   {
+    "tag": "ring",
+    "weight": 1000
+   }
+  ],
+  "stats": [
+   {
+    "id": "base_maximum_life",
+    "min": 100,
+    "max": 114
+   }
+  ],
+  "is_essence_only": false,
+  "text": "decoy"
+ },
+ "RingImplicitCrit": {
+  "domain": "item",
+  "generation_type": "implicit",
+  "type": "Implicit",
+  "name": "",
+  "required_level": 1,
+  "spawn_weights": [],
+  "stats": [
+   {
+    "id": "critical_strike_chance_+%",
+    "min": 20,
+    "max": 30
+   }
+  ],
+  "is_essence_only": false,
+  "text": ""
+ }
+}

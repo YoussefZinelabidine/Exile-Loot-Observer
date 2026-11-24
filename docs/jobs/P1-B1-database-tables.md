@@ -1,6 +1,6 @@
 # P1-B1 · Database tables (first migration)
 
-- **Agent:** backend agent (Sonnet) · **Status:** draft, waiting for owner approval and answers below
+- **Agent:** backend agent (Sonnet) · **Status:** approved by owner 2026-11-24 ("proceed with the next phase"); questions answered (see "Owner decisions")
 - **Design sections:** Implementation → Backend 1; Crawler (invalid requests, league reset, snapshots); Decided → Privacy
 
 ## Goal
@@ -37,3 +37,20 @@ SQLAlchemy models and the first Alembic revision for: `leagues`, `characters`, `
 ## Done when
 
 Checks pass, the reviewer passes it, and the main dev database has **not** been touched by the agent.
+
+## Owner decisions (2026-11-24)
+
+Q1 character names plain, account names only as HMAC-SHA256 with the salt · Q2 latest raw gear per (character, kind) only · Q3 (a) the agent may create and drop a separate `elo_test` database through SQL (never Docker commands, never the main database) and run migrations there · Q4 the owner runs `alembic upgrade head` on the dev database after review.
+
+## Crawler state tables (for P1-C1b; include them in this migration)
+
+| Table | Columns |
+| --- | --- |
+| `crawler_requests` | id bigserial PK, policy text, sent_at timestamptz, status_code int null; index (policy, sent_at). Rows older than 3 h may be pruned. |
+| `crawler_live_limits` | policy text, rule text, max_hits int, period_s int, penalty_s int, updated_at timestamptz; PK (policy, rule, period_s) |
+| `crawler_budget` | day date PK (UTC), characters_used int not null default 0, check characters_used ≥ 0 |
+| `crawler_breaker` | id smallint PK check id = 1, open_until timestamptz null, reason text null, tripped_at timestamptz null |
+
+## Test database
+
+Tests that need Postgres use a fixture that connects with the settings from `.env` (the agent never reads the file), creates `elo_test` if missing, runs migrations there, and drops it at the end. They are marked `@pytest.mark.db` and skipped when the server is unreachable.

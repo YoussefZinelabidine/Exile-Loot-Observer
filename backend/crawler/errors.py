@@ -15,6 +15,10 @@ class CircuitOpenError(CrawlerError):
         self.retry_at = retry_at
 
 
+class MissingContactInfoError(CrawlerError):
+    """Raised when the contact email or project URL is missing: no GGG request may be sent."""
+
+
 class DailyBudgetExceededError(CrawlerError):
     """Raised when the daily character budget is exhausted."""
 
@@ -27,3 +31,11 @@ class RateLimitedError(CrawlerError):
     ) -> None:
         super().__init__(message)
         self.retry_after_seconds = retry_after_seconds
+
+
+class EndpointNotAllowedError(CrawlerError):
+    """Raised when a URL is not in the hard-coded GGG endpoint table. Nothing is sent."""
+
+
+class HistoryRetentionError(CrawlerError):
+    """Raised when a live rule's period is longer than the history the stores keep."""

@@ -1,0 +1,28 @@
+{
+ "Metadata/Items/Rings/Ring3": {
+  "name": "Diamond Ring",
+  "item_class": "Ring",
+  "tags": [
+   "default",
+   "ring"
+  ],
+  "domain": "item",
+  "release_state": "released",
+  "drop_level": 25,
+  "implicits": [
+   "RingImplicitCrit"
+  ]
+ },
+ "Metadata/Items/Rings/RingOld": {
+  "name": "Diamond Ring",
+  "item_class": "Ring",
+  "tags": [
+   "default",
+   "ring"
+  ],
+  "domain": "item",
+  "release_state": "unreleased",
+  "drop_level": 1,
+  "implicits": []
+ }
+}

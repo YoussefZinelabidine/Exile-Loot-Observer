@@ -1,5 +1,6 @@
 """Alembic environment. The URL comes from Settings, never from alembic.ini."""
 
+import os
 from logging.config import fileConfig
 
 from alembic import context
@@ -14,7 +15,14 @@ if config.config_file_name:
 target_metadata = Base.metadata
 
 
+def _guard_test_database() -> None:
+    """In test mode (ELO_TESTING=1) only the throwaway elo_test database may be migrated."""
+    if os.environ.get("ELO_TESTING") == "1" and get_settings().db_name != "elo_test":
+        raise RuntimeError("ELO_TESTING=1: refusing to migrate any database except elo_test")
+
+
 def run_migrations_offline() -> None:
+    _guard_test_database()
     context.configure(
         url=get_settings().database_url,
         target_metadata=target_metadata,
@@ -26,6 +34,7 @@ def run_migrations_offline() -> None:
 
 
 def run_migrations_online() -> None:
+    _guard_test_database()
     connectable = create_engine(get_settings().database_url, poolclass=pool.NullPool)
     with connectable.connect() as connection:
         context.configure(connection=connection, target_metadata=target_metadata)

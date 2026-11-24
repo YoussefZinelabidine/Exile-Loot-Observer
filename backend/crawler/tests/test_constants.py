@@ -2,6 +2,7 @@ import pytest
 
 from backend.crawler import constants
 from backend.crawler.budget import DailyCharacterBudget
+from backend.crawler.state import InMemoryStateStore
 
 
 def test_values() -> None:
@@ -30,20 +31,21 @@ def test_measured_limits_read_only() -> None:
 
 
 def test_budget_cap_guard() -> None:
-    DailyCharacterBudget()
-    DailyCharacterBudget(1700)
-    DailyCharacterBudget(10)
+    store = InMemoryStateStore()
+    DailyCharacterBudget(store)
+    DailyCharacterBudget(store, max_per_day=1700)
+    DailyCharacterBudget(store, max_per_day=10)
     with pytest.raises(ValueError):
-        DailyCharacterBudget(1701)
+        DailyCharacterBudget(store, max_per_day=1701)
 
 
 @pytest.mark.parametrize("bad", [0, -1, -1700])
 def test_budget_rejects_non_positive(bad: int) -> None:
     with pytest.raises(ValueError):
-        DailyCharacterBudget(bad)
+        DailyCharacterBudget(InMemoryStateStore(), max_per_day=bad)
 
 
 @pytest.mark.parametrize("bad", [True, False, 1.5, "10", None])
 def test_budget_rejects_non_int(bad: object) -> None:
     with pytest.raises(TypeError):
-        DailyCharacterBudget(bad)  # type: ignore[arg-type]
+        DailyCharacterBudget(InMemoryStateStore(), max_per_day=bad)  # type: ignore[arg-type]

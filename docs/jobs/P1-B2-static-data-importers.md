@@ -1,6 +1,6 @@
 # P1-B2 · Static data importers
 
-- **Agent:** backend agent (Sonnet) · **Status:** draft, waiting for owner approval and answers below
+- **Agent:** backend agent (Sonnet) · **Status:** approved by owner 2026-11-24 ("proceed with the next phase"); questions answered (see "Owner decisions")
 - **Design sections:** Data sources; Stash search builder → Data flow; Implementation → Backend 3; To do priority 2
 
 ## Goal
@@ -35,3 +35,11 @@ Download, pin, verify and parse the static game data the backend and the patch f
 ## Done when
 
 Checks pass, the reviewer passes it; no network access in tests.
+
+## Owner decisions (2026-11-24)
+
+Q1 (a) files in `ELO_DATA_DIR` (add it to `Settings` and `.env.example` request via orchestrator), one folder per source and version · Q2 GGG's skill tree export on GitHub · Q3 the orchestrator may run one real download after review.
+
+## Also in this job: Python snapshot models
+
+Generate pydantic v2 models from `shared/schema/*.schema.json` with `datamodel-code-generator` (dev dependency) into `backend/common/snapshot_models.py`, with a script (`python -m backend.common.gen_models`) and a test that fails if the generated file is out of date. The field named `schema` needs an alias.

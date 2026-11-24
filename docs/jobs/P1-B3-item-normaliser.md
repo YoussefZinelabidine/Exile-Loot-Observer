@@ -1,6 +1,6 @@
 # P1-B3 · Item normaliser
 
-- **Agent:** backend agent (Sonnet) · **Status:** draft, waiting for owner approval and answers below
+- **Agent:** backend agent (Sonnet) · **Status:** approved by owner 2026-11-24 ("proceed with the next phase"); questions answered (see "Owner decisions")
 - **Design sections:** Relevance formula → What is counted; Implementation → Backend 6
 
 ## Goal
@@ -32,3 +32,14 @@ Turn an item from the character API (and the trade API) into normalised rows: it
 ## Done when
 
 Checks pass and the reviewer passes it.
+
+## Owner decisions (2026-11-24)
+
+Q1 (a) best tier possible at the item level, row flagged `tier_ambiguous` · Q2 (a) one row per stat, same family and tier.
+
+## Must match the app parser (added after P1-F1 review, 2026-11-24)
+
+- Use `shared/stat-handlers.json` for converting shown numbers to raw stat values (same inverses, integer rounding, range tolerance) and follow its `hidden_stats` rule: never add hidden ids of a translation group to a mod.
+- Unrecognised lines go to an `unrecognised` list (decision 24), the item is still normalised.
+- The spell-suppression corruption implicit (`base_spell_suppression_chance_150%_of_value`, handler `times_one_point_five`) is unsupported on both sides for now → `unrecognised`.
+- Values are raw stat units (decision 25); uniques: item only, mods [] (decision 27).

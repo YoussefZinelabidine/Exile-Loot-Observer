@@ -1,0 +1,11 @@
+[
+ {
+  "actions": {
+   "add_explicit_mod": "IncreasedLife1"
+  },
+  "item_classes": [
+   "Ring"
+  ],
+  "mod_id": "IncreasedLife1"
+ }
+]

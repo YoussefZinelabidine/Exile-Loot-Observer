@@ -25,3 +25,6 @@ MEASURED_LIMITS: Final[Mapping[str, tuple[tuple[int, int], ...]]] = MappingProxy
         POLICY_ITEMS: ((30, 60), (90, 1800), (180, 7200)),
     }
 )
+
+# Longest hold ever applied after a 429, whatever Retry-After says (30 days).
+MAX_RETRY_AFTER_SECONDS: Final[int] = 30 * 24 * 3600

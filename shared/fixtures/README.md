@@ -54,11 +54,15 @@ The design leaves some details open. The seed verdicts follow these rules; the P
 1. **Tier gate:** a mod qualifies if `tier ≤ max(always_top_tiers, ceil(top_fraction × ladder_length))`. Implicits and crafted mods never qualify.
 2. **Candidate builds:** every node except `all` with `shown_on_own = true` and demand for the item class.
 3. **Fit:** `Σ demand_low of the node's core mods whose stat is on a qualifying mod ÷ Σ of the node's top-k core demand_low`, k = max prefixes + max suffixes of the class. Each core stat counts once.
-4. **Best buyer:** highest fit among candidates with `accounts ≥ min_build_accounts`.
-5. **KEEP:** best buyer fit ≥ `keep_fit` with ≥ 2 counted core mods → reason `keep_fit`; then capped to PRICE CHECK if the buyer is `low_data` (adds `cap_low_data`) or the file is not validated (adds `cap_not_validated`). A capped KEEP lists both reasons.
+4. **Best buyer** (decision 30): among candidates with `accounts ≥ min_build_accounts` that meet the KEEP condition (rule 5), the highest fit; if none meets it, the highest fit among those candidates. Ties: higher fit, then more accounts, then node id.
+5. **KEEP:** best buyer fit ≥ `keep_fit` with ≥ 2 counted core mods, counted as **distinct affixes** (a hybrid affix counts once; decision 29) → reason `keep_fit`; then capped to PRICE CHECK if the buyer is `low_data` (adds `cap_low_data`) or the file is not validated (adds `cap_not_validated`). A capped KEEP lists both reasons.
 6. **PRICE CHECK (partial):** otherwise, best buyer fit ≥ `price_check_fit`. **Niche** (owner decision 2026-11-23): otherwise, a candidate below `min_build_accounts` meets the KEEP condition → PRICE CHECK naming that build.
 7. **Boosts** apply only when the result would be NO BUYER, and their reasons are listed only then. Fractured core mod (a qualifying fractured mod whose stat is core for a buyer-size build), base value (base price ≥ `base_value_min_chaos` at ilvl ≥ `base_value_min_ilvl`), crafting potential (≥ 2 counted core mods for a buyer-size build, an open prefix or suffix, not corrupted or mirrored). A boost names no buyer.
 8. **Corrupted** items with open slots get `corrupted_open_slots_ignored` and never the crafting boost.
+11. **Numbers** (decision 37): comparisons use `fit ≥ threshold − 1e-9`; fit sums core stats in descending `demand_low` order (ties by stat id); duplicate core `stat_id`s in a node count once (highest `demand_low`).
+12. **Unvalidated / null thresholds** (decision 31): a null threshold needed for a decision caps the result at PRICE CHECK (`cap_not_validated`), except that fit 0 with no boost stays NO BUYER.
+13. **Unsupported items** (decision 32): item class or base not in the patch → NOT SCORED with reason `unsupported_item`. Uniques are handled by name first (decision 27). Cluster jewels: TODO (decision 33).
+10. **Unrecognised mods** (owner decision 2026-11-24): lines that map to no known stat are listed in `unrecognised`, ignored by scoring, and add reason `unrecognised_mods` to whatever verdict the known mods give.
 9. `fit` in `expected.json` is the best buyer's fit (0 when no candidate has any fit); `counted_stat_ids` are the counted core stats of the named buyer.
 
 Not yet covered by any rule: stale-snapshot cap (`stale_after_days`), flags for influenced / synthesised / mirrored / double-corrupted items, corruption implicits as extra mods, the "small" crafting boost for abyss jewels. The full list of interpretations for the owner to confirm is in `docs/jobs/P1-F2-scoring-engine.md`.

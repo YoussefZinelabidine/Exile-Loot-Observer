@@ -58,12 +58,18 @@
           "source": { "enum": ["implicit", "explicit", "fractured", "crafted", "enchant", "corruption_implicit"] },
           "affix": { "enum": ["prefix", "suffix", null] },
           "stat_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-          "values": { "type": "array", "items": { "type": "number" }, "minItems": 1, "description": "Rolled values, same order as stat_ids." },
+          "values": { "type": "array", "items": { "type": "number" }, "minItems": 1, "description": "Rolled values, same order as stat_ids, in raw stat units (display conversions such as per_minute_to_per_second or divide_by_one_hundred undone), matching RePoE tier ranges." },
           "tier": { "type": ["integer", "null"], "minimum": 1, "description": "Tier on this base (1 = best); null for implicits and crafts." },
           "family": { "type": ["string", "null"], "description": "tier_sets family key, e.g. 'prefix:IncreasedLife'." },
           "qualifies": { "type": "boolean", "description": "Passes the tier gate (explicit and fractured mods only)." }
         }
       }
+    },
+
+    "unrecognised": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Mod lines the parser/normaliser could not map to a known stat (e.g. influence-only, essence, veiled, delve, eldritch). The item is still scored on its known mods and flagged. Optional; absent = []."
     },
 
     "verdict": {
@@ -92,7 +98,9 @@
               "corrupted_open_slots_ignored",
               "unique_price_lookup",
               "cluster_jewel_price_lookup",
-              "unsupported_language"
+              "unsupported_language",
+              "unrecognised_mods",
+              "unsupported_item"
             ]
           }
         },

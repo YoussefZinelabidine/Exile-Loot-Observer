@@ -1,6 +1,6 @@
 # P1-C1 · Safe HTTP client and rate limiter
 
-- **Agent:** crawler agent (Sonnet) · **Status:** draft, waiting for owner approval and answers below
+- **Agent:** crawler agent (Sonnet) · **Status:** approved by owner 2026-11-24 ("proceed with the next phase"); questions answered (see "Owner decisions")
 - **Design sections:** Crawler → Rate limits, Safety rules, Invalid requests; Implementation → Backend 2
 
 ## Goal
@@ -43,3 +43,12 @@ All of section "Safety rules" apply. Constants stay hard-coded (`constants.py`).
 ## Done when
 
 Checks pass (`pytest backend/crawler`, `ruff`), the reviewer passes it, and the orchestrator has run **no** live request (the first live smoke test is a separate, owner-approved step).
+
+## Owner decisions (2026-11-24)
+
+Q1 (a) state in Postgres with an advisory lock · Q2 (a) sync `httpx.Client` · Q3 (a) 80% of `min(live, measured)` · Q4 (a) 1 unit per character, charged on its items request, UTC calendar day · Q5 (a) persist breaker and budget.
+
+## Split into two runs
+
+- **P1-C1 (wave 1):** all logic behind a `CrawlerStateStore` protocol (`backend/crawler/state.py`) with an in-memory implementation used by every test. Methods (names may be refined, report them): `with_lock()` (context manager serialising acquire across processes), `record_request(policy, sent_at)`, `count_requests(policy, since)`, `get/set_live_limits(policy, rules)`, `budget_used(day)`, `budget_consume(day, n)`, `breaker_state()`, `trip_breaker(open_until, reason)`. Inject the clock (`now()`), the store and the `httpx` transport.
+- **P1-C1b (wave 2, after P1-B1):** `PostgresStateStore` using the tables P1-B1 creates (`crawler_requests`, `crawler_live_limits`, `crawler_budget`, `crawler_breaker`) and `pg_advisory_xact_lock`; tests on the `elo_test` database only.

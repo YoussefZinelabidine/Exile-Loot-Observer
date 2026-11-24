@@ -1,0 +1,49 @@
+{
+  "_comment": "Inverse of RePoE stat_translations index_handlers: how to turn the number shown in item text back into the raw stat value. Used by the app parser (P1-F1) and the backend normaliser (P1-B3) so both agree. Apply the inverses of an entry's handlers in reverse order, then round the raw value to an integer (RePoE raw stats are integers). Handlers not listed here are unsupported: lines using them go to `unrecognised`. Checked against RePoE 3.30.0.4.3 (P1-F1 review, 2026-11-24).",
+  "version": 1,
+  "inverse": {
+    "canonical_stat": { "op": "identity" },
+    "negate": { "op": "multiply", "by": -1 },
+    "negate_and_double": { "op": "multiply", "by": -0.5 },
+    "double": { "op": "multiply", "by": 0.5 },
+    "multiply_by_four": { "op": "multiply", "by": 0.25 },
+    "divide_by_one_hundred": { "op": "multiply", "by": 100 },
+    "divide_by_one_hundred_2dp": { "op": "multiply", "by": 100 },
+    "divide_by_one_hundred_2dp_if_required": { "op": "multiply", "by": 100 },
+    "divide_by_one_thousand": { "op": "multiply", "by": 1000 },
+    "divide_by_two_0dp": { "op": "multiply", "by": 2 },
+    "divide_by_three": { "op": "multiply", "by": 3 },
+    "divide_by_four": { "op": "multiply", "by": 4 },
+    "divide_by_five": { "op": "multiply", "by": 5 },
+    "divide_by_six": { "op": "multiply", "by": 6 },
+    "divide_by_ten_0dp": { "op": "multiply", "by": 10 },
+    "divide_by_ten_1dp": { "op": "multiply", "by": 10 },
+    "divide_by_ten_1dp_if_required": { "op": "multiply", "by": 10 },
+    "divide_by_twelve": { "op": "multiply", "by": 12 },
+    "divide_by_fifteen_0dp": { "op": "multiply", "by": 15 },
+    "divide_by_twenty_then_double_0dp": { "op": "multiply", "by": 10 },
+    "per_minute_to_per_second": { "op": "multiply", "by": 60 },
+    "per_minute_to_per_second_0dp": { "op": "multiply", "by": 60 },
+    "per_minute_to_per_second_1dp": { "op": "multiply", "by": 60 },
+    "per_minute_to_per_second_2dp": { "op": "multiply", "by": 60 },
+    "per_minute_to_per_second_2dp_if_required": { "op": "multiply", "by": 60 },
+    "milliseconds_to_seconds": { "op": "multiply", "by": 1000 },
+    "milliseconds_to_seconds_0dp": { "op": "multiply", "by": 1000 },
+    "milliseconds_to_seconds_1dp": { "op": "multiply", "by": 1000 },
+    "milliseconds_to_seconds_2dp": { "op": "multiply", "by": 1000 },
+    "milliseconds_to_seconds_2dp_if_required": { "op": "multiply", "by": 1000 },
+    "deciseconds_to_seconds": { "op": "multiply", "by": 10 },
+    "locations_to_metres": { "op": "multiply", "by": 10 }
+  },
+  "excluded_on_purpose": {
+    "old_leech_percent": "only on old_do_not_use_* stats; keeping it out prevents a wrong match",
+    "old_leech_permyriad": "only on old_do_not_use_* stats",
+    "30%_of_value": "only on old_do_not_use_* stats",
+    "times_one_point_five": "spell suppression corruption implicit (base_spell_suppression_chance_150%_of_value); line goes to unrecognised rather than mapping to the wrong stat id"
+  },
+  "rules": {
+    "rounding": "Round the raw value to the nearest integer after inverting. Shown numbers are rounded for display, so when comparing a shown roll range with a tier range, allow a tolerance of one display step converted to raw units.",
+    "hidden_stats": "A translation group can include stats the text does not show (format 'ignore', or no placeholder). For text WITH placeholders, only stats with a visible {n} whose format is not 'ignore' belong to the mod. For text WITHOUT placeholders, see no_number_text. Never add the other ids of the group.",
+    "no_number_text": "For text with no placeholder, a stat belongs to the mod only if its condition excludes 0: min is a number > 0, or max is a number < 0. Its value is min when min > 0 (a lower bound if max differs or is null), else max. Stats whose condition allows 0 (both null, or a range containing 0) are hidden and not added."
+  }
+}
