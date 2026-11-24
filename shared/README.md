@@ -4,8 +4,10 @@ Contracts used by both the backend (Python) and the app (TypeScript). Owned by t
 
 | Folder | Contents | Status |
 | --- | --- | --- |
-| `schema/` | JSON Schemas (draft 2020-12) for the snapshot files: patch file, daily file, manifest | To do (Phase 0, P0-2) |
-| `fixtures/` | Golden test items (game text, character-API JSON, trade-API JSON, expected results) and fixture snapshots | To do (Phase 0, P0-3) |
+| `schema/` | JSON Schemas (draft 2020-12): patch file, daily file, manifest, golden expected results. Format notes in `schema/README.md` | Schema version 1 (Phase 0) |
+| `fixtures/snapshot/` | Synthetic fixture snapshot (valid example of all three files) | Phase 0 |
+| `fixtures/golden/` | Golden test items in three forms with expected results; see `fixtures/README.md` | 9 hand-written seed items (Phase 0) |
+| `user-agents.md` | User-Agent strings for every outside service | Phase 0 |
 
 Rules:
 - Every snapshot file carries a schema version; a breaking change bumps it.

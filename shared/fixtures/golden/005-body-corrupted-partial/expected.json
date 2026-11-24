@@ -1,0 +1,82 @@
+{
+  "id": "005-body-corrupted-partial",
+  "description": "Corrupted body armour with one qualifying ES mod and open slots: PRICE CHECK, open slots ignored.",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Rare",
+    "item_class": "Body Armour",
+    "base": "Vaal Regalia",
+    "name": "Ghoul Shroud",
+    "ilvl": 86,
+    "corrupted": true,
+    "mirrored": false,
+    "fractured": false,
+    "synthesised": false,
+    "influences": [],
+    "open_prefixes": 1,
+    "open_suffixes": 2
+  },
+  "mods": [
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "local_energy_shield_+%"
+      ],
+      "values": [
+        105
+      ],
+      "tier": 1,
+      "family": "prefix:LocalEnergyShieldPercent",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "local_energy_shield"
+      ],
+      "values": [
+        20
+      ],
+      "tier": 8,
+      "family": "prefix:LocalEnergyShield",
+      "qualifies": false
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "additional_intelligence"
+      ],
+      "values": [
+        20
+      ],
+      "tier": 7,
+      "family": "suffix:Intelligence",
+      "qualifies": false
+    }
+  ],
+  "verdict": {
+    "result": "PRICE_CHECK",
+    "best_buyer": "arch:es-spell",
+    "fit": 0.3297,
+    "low_data": false,
+    "reasons": [
+      "partial_fit",
+      "corrupted_open_slots_ignored"
+    ],
+    "counted_stat_ids": [
+      "local_energy_shield_+%"
+    ]
+  }
+}

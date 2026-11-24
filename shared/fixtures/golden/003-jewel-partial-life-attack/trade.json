@@ -1,0 +1,91 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "5a7952eda58b6cf1abaece11e5b87aa292f90e16daecd3245287c0a6bb6d9183",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "8d679a2fd64972bea85d3e87ea0e777bf94e5f33ff5a4e55e5a70f4ebca9972d",
+      "name": "Storm Spark",
+      "typeLine": "Cobalt Jewel",
+      "baseType": "Cobalt Jewel",
+      "rarity": "Rare",
+      "identified": true,
+      "ilvl": 80,
+      "frameType": 2,
+      "explicitMods": [
+        "6% increased maximum Life",
+        "30% increased Stun and Block Recovery"
+      ],
+      "extended": {
+        "mods": {
+          "explicit": [
+            {
+              "name": "Vivid",
+              "tier": "P1",
+              "level": 1,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_983749596",
+                  "min": "5",
+                  "max": "7"
+                }
+              ]
+            },
+            {
+              "name": "of Recovery",
+              "tier": "S1",
+              "level": 1,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_2511217560",
+                  "min": "25",
+                  "max": "35"
+                }
+              ]
+            }
+          ]
+        },
+        "hashes": {
+          "explicit": [
+            [
+              "explicit.stat_983749596",
+              [
+                0
+              ]
+            ],
+            [
+              "explicit.stat_2511217560",
+              [
+                1
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

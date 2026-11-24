@@ -1,0 +1,23 @@
+Item Class: Gloves
+Rarity: Rare
+Rapture Grasp
+Sorcerer Gloves
+--------
+Energy Shield: 53
+--------
+Requirements:
+Level: 69
+Int: 97
+--------
+Sockets: B-B B 
+--------
+Item Level: 84
+--------
+{ Prefix Modifier "Virile" (Tier: 2) — Life }
++107(100-114) to maximum Life (fractured)
+{ Prefix Modifier "Chalybeous" (Tier: 4) — Mana }
++57(55-59) to maximum Mana
+{ Suffix Modifier "of Feat" (Tier: 2) — Life }
+Gain 64(56-72) Life per Enemy Killed
+--------
+Fractured Item

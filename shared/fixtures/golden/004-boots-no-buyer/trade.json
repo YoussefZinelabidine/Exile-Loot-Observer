@@ -1,0 +1,110 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "dee01ff42c4d6890df286d9ba7eb01f663dbd0f34f4038487e0a0aaae9900a1b",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "e4d6117faa85e638751556c2663de804af59466419281bbe475b481050e268b7",
+      "name": "Dusk Stride",
+      "typeLine": "Sorcerer Boots",
+      "baseType": "Sorcerer Boots",
+      "rarity": "Rare",
+      "identified": true,
+      "ilvl": 75,
+      "frameType": 2,
+      "explicitMods": [
+        "+47 to maximum Mana",
+        "+30 to Intelligence",
+        "21% increased Stun and Block Recovery"
+      ],
+      "extended": {
+        "mods": {
+          "explicit": [
+            {
+              "name": "Opalescent",
+              "tier": "P6",
+              "level": 42,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_1050105434",
+                  "min": "45",
+                  "max": "49"
+                }
+              ]
+            },
+            {
+              "name": "of the Philosopher",
+              "tier": "S5",
+              "level": 44,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_328541901",
+                  "min": "28",
+                  "max": "32"
+                }
+              ]
+            },
+            {
+              "name": "of Steel Skin",
+              "tier": "S3",
+              "level": 42,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_2511217560",
+                  "min": "20",
+                  "max": "22"
+                }
+              ]
+            }
+          ]
+        },
+        "hashes": {
+          "explicit": [
+            [
+              "explicit.stat_1050105434",
+              [
+                0
+              ]
+            ],
+            [
+              "explicit.stat_328541901",
+              [
+                1
+              ]
+            ],
+            [
+              "explicit.stat_2511217560",
+              [
+                2
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

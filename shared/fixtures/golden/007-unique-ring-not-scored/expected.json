@@ -1,0 +1,38 @@
+{
+  "id": "007-unique-ring-not-scored",
+  "description": "Unique ring: not scored, poe.ninja price instead. Unique mods are not normalised in v1, so `mods` is empty.",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Unique",
+    "item_class": "Ring",
+    "base": "Gold Ring",
+    "name": "Ventor's Gamble",
+    "ilvl": 83,
+    "corrupted": false,
+    "mirrored": false,
+    "fractured": false,
+    "synthesised": false,
+    "influences": []
+  },
+  "mods": [],
+  "verdict": {
+    "result": "NOT_SCORED",
+    "best_buyer": null,
+    "fit": null,
+    "low_data": false,
+    "reasons": [
+      "unique_price_lookup"
+    ],
+    "counted_stat_ids": [],
+    "special_price_chaos": 3
+  }
+}

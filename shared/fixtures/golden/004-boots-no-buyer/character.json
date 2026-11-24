@@ -1,0 +1,26 @@
+{
+  "_fixture_note": "Single item in the shape of one entry of get-items 'items'. Hand-written; replace with a recorded response.",
+  "item": {
+    "verified": false,
+    "w": 1,
+    "h": 1,
+    "icon": "",
+    "league": "Covens",
+    "id": "e4d6117faa85e638751556c2663de804af59466419281bbe475b481050e268b7",
+    "name": "Dusk Stride",
+    "typeLine": "Sorcerer Boots",
+    "baseType": "Sorcerer Boots",
+    "rarity": "Rare",
+    "identified": true,
+    "ilvl": 75,
+    "frameType": 2,
+    "explicitMods": [
+      "+47 to maximum Mana",
+      "+30 to Intelligence",
+      "21% increased Stun and Block Recovery"
+    ],
+    "inventoryId": "Boots",
+    "x": 0,
+    "y": 0
+  }
+}

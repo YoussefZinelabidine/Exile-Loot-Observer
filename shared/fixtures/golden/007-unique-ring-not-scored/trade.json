@@ -1,0 +1,52 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "0a17d76451ca0b581c130496e49ee033982136a5d145f178d22a5fe6f5458782",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "a1ce70d551c3af733ed88f6e80da4478e68577ae0ae7ca0c4ceea6217fa44292",
+      "name": "Ventor's Gamble",
+      "typeLine": "Gold Ring",
+      "baseType": "Gold Ring",
+      "rarity": "Unique",
+      "identified": true,
+      "ilvl": 83,
+      "frameType": 3,
+      "implicitMods": [
+        "+12% to Item Rarity"
+      ],
+      "explicitMods": [
+        "+45 to maximum Life",
+        "4% increased Quantity of Items found",
+        "+22% to Item Rarity",
+        "+31% to Fire Resistance",
+        "-8% to Cold Resistance",
+        "+40% to Lightning Resistance"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_fixture_note": "Single item in the shape of one entry of get-items 'items'. Hand-written; replace with a recorded response.",
+  "item": {
+    "verified": false,
+    "w": 1,
+    "h": 1,
+    "icon": "",
+    "league": "Covens",
+    "id": "c6a64969cdeebec72fed10f107ef1ee9cf03f72a67a1498e2bbf7df18d1bb2ed",
+    "name": "Doom Beads",
+    "typeLine": "Onyx Amulet",
+    "baseType": "Onyx Amulet",
+    "rarity": "Rare",
+    "identified": true,
+    "ilvl": 84,
+    "frameType": 2,
+    "implicitMods": [
+      "+13 to all Attributes"
+    ],
+    "explicitMods": [
+      "24% increased Spell Damage",
+      "+92 to maximum Life",
+      "18% increased Cast Speed"
+    ],
+    "inventoryId": "Amulet",
+    "x": 0,
+    "y": 0
+  }
+}

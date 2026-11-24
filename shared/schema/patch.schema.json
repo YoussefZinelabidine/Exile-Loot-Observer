@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elo.local/schema/patch.schema.json",
+  "title": "ELO patch file",
+  "description": "Game-data subset the app needs to parse and score rare items. Rebuilt only when the game patch (RePoE / poe.re data) changes. Shipped gzip-compressed. See shared/schema/README.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "game_patch", "sources", "built_at", "item_classes", "bases", "tier_sets", "translations", "trade_ids", "search_fragments"],
+  "properties": {
+    "schema": { "const": "elo.patch" },
+    "schema_version": { "const": 1 },
+    "game_patch": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)+$", "description": "Game patch this file was built for, e.g. 3.30.0.4.3. The daily file's patch_ref must equal it." },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repoe_version", "poere_patch"],
+      "properties": {
+        "repoe_version": { "type": "string", "description": "RePoE version.txt" },
+        "poere_patch": { "type": "string", "description": "poe.re current.json poe1 patch" },
+        "poere_commit": { "type": "string" }
+      }
+    },
+    "built_at": { "type": "string", "format": "date-time" },
+
+    "item_classes": {
+      "description": "Scored and recognised item classes, keyed by RePoE item_class (e.g. 'Ring', 'Jewel', 'AbyssJewel', 'Body Armour').",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/itemClass" }
+    },
+    "bases": {
+      "description": "Base types keyed by exact English base name (e.g. 'Diamond Ring').",
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/base" }
+    },
+    "tier_sets": {
+      "description": "Tier ladders shared by every base with the same spawn tags. Keyed by tier-set id (referenced from bases[*].tier_set).",
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/tierSet" }
+    },
+    "translations": {
+      "description": "English stat-text subset from RePoE stat_translations.json, for every stat that can appear on a scored item class. Used to turn item text into stat IDs and back.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/translation" }
+    },
+    "trade_ids": {
+      "description": "Official trade-site stat IDs per RePoE stat ID (from RePoE stat_translations trade_stats). Used by 'Open trade search'.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "explicit": { "$ref": "#/$defs/tradeId" },
+          "implicit": { "$ref": "#/$defs/tradeId" },
+          "fractured": { "$ref": "#/$defs/tradeId" },
+          "crafted": { "$ref": "#/$defs/tradeId" }
+        }
+      }
+    },
+    "search_fragments": {
+      "description": "poe.re stash-search fragments per scored item class (RePoE item_class key). Data only; credit poe.re in the app.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/searchFragment" }
+      }
+    }
+  },
+
+  "$defs": {
+    "statId": { "type": "string", "minLength": 1, "description": "RePoE stat ID, e.g. 'base_maximum_life'." },
+    "tradeId": { "type": "string", "pattern": "^[a-z]+\\.stat_[0-9]+$" },
+    "affix": { "enum": ["prefix", "suffix"] },
+
+    "itemClass": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scored", "max_prefixes", "max_suffixes"],
+      "properties": {
+        "scored": { "type": "boolean", "description": "false = recognised but not scored (e.g. cluster jewels: price lookup only)." },
+        "label": { "type": "string", "description": "Display name, e.g. 'Abyss Jewel'." },
+        "max_prefixes": { "type": "integer", "minimum": 0 },
+        "max_suffixes": { "type": "integer", "minimum": 0 },
+        "bench_craftable": { "type": "boolean", "description": "false for abyss jewels and jewels." },
+        "craftable_stat_ids": { "type": "array", "items": { "$ref": "#/$defs/statId" }, "uniqueItems": true, "description": "Stats that can be added at the crafting bench on this class (natural rolls of these are discounted in scoring). Source: RePoE crafting_bench_options.json. Single source of truth for 'craftable'." },
+        "poere_basetype": { "type": "string", "description": "poe.re 'basetype' name the fragments came from, e.g. 'Abyss Jewels'." },
+        "trade_category": { "type": "string", "description": "Official trade-site category filter for 'Open trade search', e.g. 'accessory.ring'." }
+      }
+    },
+
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_class", "tier_set"],
+      "properties": {
+        "item_class": { "type": "string" },
+        "tier_set": { "type": "string", "description": "Key into tier_sets." },
+        "drop_level": { "type": "integer", "minimum": 0 },
+        "implicit_stat_ids": { "type": "array", "items": { "$ref": "#/$defs/statId" } }
+      }
+    },
+
+    "tierSet": {
+      "description": "Mod families that can roll on these bases, keyed by family id (RePoE mod 'type', prefixed with the affix: 'prefix:IncreasedLife').",
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/family" }
+    },
+    "family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["affix", "stat_ids", "tiers"],
+      "properties": {
+        "affix": { "$ref": "#/$defs/affix" },
+        "stat_ids": { "type": "array", "items": { "$ref": "#/$defs/statId" }, "minItems": 1, "description": "Stats this family rolls (hybrid families list several)." },
+        "tiers": {
+          "description": "Ordered best first: tiers[0] is T1. The ladder length is the number of tiers that can spawn on these bases.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/tier" }
+        }
+      }
+    },
+    "tier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier", "mod_id", "required_level", "stats"],
+      "properties": {
+        "tier": { "type": "integer", "minimum": 1, "description": "1 = best. Equals position in the tiers array + 1." },
+        "mod_id": { "type": "string", "description": "RePoE mod id, e.g. 'IncreasedLife7'." },
+        "name": { "type": "string", "description": "Affix name shown in advanced item text, e.g. 'Rotund'." },
+        "required_level": { "type": "integer", "minimum": 0, "description": "Minimum item level for this tier to roll." },
+        "spawn_weight": { "type": "integer", "minimum": 0 },
+        "stats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "min", "max"],
+            "properties": {
+              "id": { "$ref": "#/$defs/statId" },
+              "min": { "type": "number" },
+              "max": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+
+    "translation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ids", "english"],
+      "properties": {
+        "ids": { "type": "array", "items": { "$ref": "#/$defs/statId" }, "minItems": 1 },
+        "english": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["string", "format", "condition"],
+            "properties": {
+              "string": { "type": "string", "description": "Template with {0}, {1}… placeholders, with RePoE '[Id|Text]' markup already reduced to 'Text'. Stats with identical text (e.g. local vs global energy shield) are told apart by the families in the item's tier set." },
+              "format": { "type": "array", "items": { "type": "string" } },
+              "condition": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "min": { "type": ["number", "null"] },
+                    "max": { "type": ["number", "null"] },
+                    "negated": { "type": ["boolean", "null"] }
+                  }
+                }
+              },
+              "index_handlers": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
+
+    "searchFragment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stat_ids", "affix", "category", "regex", "text"],
+      "properties": {
+        "stat_ids": { "type": "array", "items": { "$ref": "#/$defs/statId" }, "minItems": 1, "description": "Matched to RePoE by stat ID, never by poe.re mod id." },
+        "affix": { "$ref": "#/$defs/affix" },
+        "category": { "type": "string", "description": "poe.re category, e.g. 'prefix', 'suffix', 'delve_prefix', 'prefix_shaper'." },
+        "text": { "type": "string", "description": "poe.re 'desc', e.g. '#% increased Area of Effect'." },
+        "regex": { "type": "string", "description": "Fragment that matches only this modifier line (lower-case game search syntax)." },
+        "number": {
+          "description": "poe.re number placement hints, used by ELO's own 'at least X' generator.",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "before": { "type": "array", "items": { "type": "integer" } },
+            "on": { "type": "array", "items": { "type": "integer" } },
+            "after": { "type": "array", "items": { "type": "integer" } }
+          }
+        }
+      }
+    }
+  }
+}

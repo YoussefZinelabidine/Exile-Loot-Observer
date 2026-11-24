@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elo.local/schema/daily.schema.json",
+  "title": "ELO daily file",
+  "description": "Aggregated ladder demand per item class and build node, plus scoring parameters. Rebuilt after each crawl. Shipped gzip-compressed. Never contains account or character names. See shared/schema/README.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "league", "patch_ref", "crawl_date", "built_at", "validated", "freshness", "params", "build_nodes", "demand"],
+  "properties": {
+    "schema": { "const": "elo.daily" },
+    "schema_version": { "const": 1 },
+    "league": { "type": "string", "minLength": 1, "description": "GGG league id, e.g. 'Covens'." },
+    "patch_ref": { "type": "string", "description": "game_patch of the patch file this daily file must be used with." },
+    "crawl_date": { "type": "string", "format": "date" },
+    "built_at": { "type": "string", "format": "date-time" },
+    "validated": { "type": "boolean", "description": "false until thresholds are validated against trade listings. While false, the app never shows KEEP (verdicts capped at PRICE CHECK)." },
+
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["characters_used", "accounts_used", "oldest_gear_days"],
+      "properties": {
+        "characters_used": { "type": "integer", "minimum": 0 },
+        "accounts_used": { "type": "integer", "minimum": 0 },
+        "oldest_gear_days": { "type": "number", "minimum": 0, "description": "Age of the oldest gear snapshot used." },
+        "ladder_coverage": { "type": "number", "minimum": 0, "maximum": 1, "description": "Share of public ladder characters with fetched gear." }
+      }
+    },
+
+    "params": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["thresholds", "tier_gate", "min_effective_accounts_own_node", "core_min_effective_obs"],
+      "properties": {
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["default"],
+          "properties": {
+            "default": { "$ref": "#/$defs/thresholds" },
+            "by_item_class": { "type": "object", "additionalProperties": { "$ref": "#/$defs/thresholdOverrides" } }
+          }
+        },
+        "tier_gate": {
+          "description": "Relative tier gate: a roll qualifies if its tier is within the best max(always_top_tiers, ceil(top_fraction × ladder length)) tiers of its family on that base.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["top_fraction", "always_top_tiers"],
+          "properties": {
+            "top_fraction": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+            "always_top_tiers": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "min_effective_accounts_own_node": { "type": "number", "minimum": 0, "description": "A main-skill node is shown on its own only above this (design: ~150)." },
+        "core_min_effective_obs": { "type": "number", "minimum": 0, "description": "Minimum effective observations for a core mod (design: ~10)." },
+        "stale_after_days": { "type": "number", "exclusiveMinimum": 0, "description": "Snapshot older than this (from crawl_date) → verdicts capped at PRICE CHECK with a 'low data' marker." }
+      }
+    },
+
+    "build_nodes": {
+      "description": "Build tree: 'all' (per item class overall) → archetype → main skill.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/buildNode" }
+    },
+
+    "demand": {
+      "description": "demand[item_class][node_id] → mod demand for that build node. Item class keys match the patch file.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": { "$ref": "#/$defs/nodeDemand" }
+      }
+    },
+
+    "base_values": {
+      "description": "poe.ninja BaseType prices used by the base-value boost.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/baseValue" }
+    },
+    "special_prices": {
+      "description": "poe.ninja prices for items ELO does not score (uniques, cluster jewels).",
+      "type": "array",
+      "items": { "$ref": "#/$defs/specialPrice" }
+    },
+    "currency": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "divine_chaos": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    }
+  },
+
+  "$defs": {
+    "statId": { "type": "string", "minLength": 1 },
+    "nullableNumber": { "type": ["number", "null"] },
+
+    "thresholds": {
+      "description": "null = not validated yet. Any null threshold needed for a decision caps the verdict at PRICE CHECK.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keep_fit", "price_check_fit", "min_build_accounts", "craftable_discount", "base_value_min_chaos", "base_value_min_ilvl"],
+      "properties": {
+        "keep_fit": { "$ref": "#/$defs/nullableNumber", "description": "Minimum fit for KEEP." },
+        "price_check_fit": { "$ref": "#/$defs/nullableNumber", "description": "Minimum fit for PRICE CHECK from a partial or niche fit." },
+        "min_build_accounts": { "$ref": "#/$defs/nullableNumber", "description": "A build with fewer accounts is 'niche': it is never the best buyer for KEEP; a KEEP-level fit for it gives PRICE CHECK naming that build (owner decision 2026-11-23)." },
+        "craftable_discount": { "$ref": "#/$defs/nullableNumber", "description": "Fraction removed from the demand of naturally rolled craftable stats (0–1). How it applies is an open question; fixtures use 0." },
+        "base_value_min_chaos": { "$ref": "#/$defs/nullableNumber", "description": "Base-value boost applies at or above this chaos price." },
+        "base_value_min_ilvl": { "type": ["integer", "null"], "description": "Base-value boost applies at or above this item level (design: 84)." }
+      }
+    },
+    "thresholdOverrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "keep_fit": { "$ref": "#/$defs/nullableNumber" },
+        "price_check_fit": { "$ref": "#/$defs/nullableNumber" },
+        "min_build_accounts": { "$ref": "#/$defs/nullableNumber" },
+        "craftable_discount": { "$ref": "#/$defs/nullableNumber" },
+        "base_value_min_chaos": { "$ref": "#/$defs/nullableNumber" },
+        "base_value_min_ilvl": { "type": ["integer", "null"] }
+      }
+    },
+
+    "buildNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "level", "parent", "label", "accounts", "effective_accounts", "shown_on_own", "low_data"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(all|arch:[a-z0-9-]+|skill:[a-z0-9-]+)$" },
+        "level": { "enum": ["all", "archetype", "main_skill"] },
+        "parent": { "type": ["string", "null"], "description": "null only for 'all'." },
+        "label": { "type": "string" },
+        "defence": { "enum": ["life", "es", "hybrid"] },
+        "damage": { "enum": ["attack", "spell", "minion", "dot"] },
+        "flags": { "type": "array", "uniqueItems": true, "items": { "enum": ["mind_over_matter", "eldritch_battery", "petrified_blood"] } },
+        "main_skill": { "type": "string", "description": "Gem name, main_skill nodes only." },
+        "accounts": { "type": "integer", "minimum": 0 },
+        "effective_accounts": { "type": "number", "minimum": 0 },
+        "shown_on_own": { "type": "boolean", "description": "true = can be named as a buyer and filtered on. false = its archetype stands in for it." },
+        "low_data": { "type": "boolean", "description": "true = verdicts naming this build are capped at PRICE CHECK with a 'low data' marker." }
+      }
+    },
+
+    "nodeDemand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["effective_items", "mods"],
+      "properties": {
+        "effective_items": { "type": "number", "minimum": 0, "description": "W_b: weighted item count for this class and node." },
+        "mods": {
+          "description": "Every mod with non-zero demand, sorted by demand descending. Core mods have core = true (6–8 per node).",
+          "type": "array",
+          "items": { "$ref": "#/$defs/modDemand" }
+        }
+      }
+    },
+    "modDemand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stat_id", "core", "demand", "demand_low", "share", "effective_obs", "demand_tier"],
+      "properties": {
+        "stat_id": { "$ref": "#/$defs/statId" },
+        "core": { "type": "boolean" },
+        "demand": { "type": "number", "minimum": 0 },
+        "demand_low": { "type": "number", "minimum": 0, "description": "Cautious lower-bound demand used by item scoring (computed on the server)." },
+        "share": { "type": "number", "minimum": 0, "maximum": 1, "description": "Smoothed observed share p_obs(m|b) of tier-gated rolls." },
+        "effective_obs": { "type": "number", "minimum": 0 },
+        "demand_tier": { "enum": ["S", "A", "B", null], "description": "null = near-zero demand, no tier shown. Bench-craftable flags live only in the patch file (item_classes[*].craftable_stat_ids)." }
+      }
+    },
+
+    "baseValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base", "min_ilvl", "influence", "chaos"],
+      "properties": {
+        "base": { "type": "string" },
+        "min_ilvl": { "type": "integer", "minimum": 1 },
+        "influence": { "enum": [null, "shaper", "elder", "crusader", "redeemer", "hunter", "warlord"] },
+        "chaos": { "type": "number", "minimum": 0 },
+        "worn_share": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "specialPrice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "chaos"],
+      "properties": {
+        "kind": { "enum": ["unique", "cluster_jewel"] },
+        "name": { "type": "string" },
+        "base": { "type": "string" },
+        "variant": { "type": ["string", "null"] },
+        "links": { "type": ["integer", "null"] },
+        "chaos": { "type": "number", "minimum": 0 }
+      }
+    }
+  }
+}

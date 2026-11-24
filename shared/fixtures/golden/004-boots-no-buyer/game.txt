@@ -1,0 +1,21 @@
+Item Class: Boots
+Rarity: Rare
+Dusk Stride
+Sorcerer Boots
+--------
+Energy Shield: 55
+--------
+Requirements:
+Level: 67
+Int: 123
+--------
+Sockets: B-B B 
+--------
+Item Level: 75
+--------
+{ Prefix Modifier "Opalescent" (Tier: 6) — Mana }
++47(45-49) to maximum Mana
+{ Suffix Modifier "of the Philosopher" (Tier: 5) — Attribute }
++30(28-32) to Intelligence
+{ Suffix Modifier "of Steel Skin" (Tier: 3) }
+21(20-22)% increased Stun and Block Recovery

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elo.local/schema/golden-expected.schema.json",
+  "title": "ELO golden item: expected results",
+  "description": "expected.json of one golden test item. The app's parser (game.txt) and the backend's normaliser (character.json, trade.json) must all produce `item` and `mods`; both scoring engines must produce `verdict` when scored against the snapshot named in `snapshot`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "description", "source", "forms", "snapshot", "item", "mods", "verdict"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9-]+$" },
+    "description": { "type": "string" },
+    "source": { "enum": ["hand-written", "game-copy", "recorded"], "description": "hand-written = Phase 0 seed item built from documented formats; replace with real copies over time." },
+    "forms": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": { "enum": ["game", "character", "trade"] },
+      "description": "Which input files exist: game.txt, character.json, trade.json."
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["patch", "daily"],
+      "properties": {
+        "patch": { "type": "string", "description": "Path relative to shared/fixtures/, e.g. 'snapshot/patch.json'." },
+        "daily": { "type": "string" }
+      }
+    },
+
+    "item": {
+      "type": ["object", "null"],
+      "description": "null when the item cannot be parsed (e.g. non-English text).",
+      "additionalProperties": false,
+      "required": ["rarity", "item_class", "base", "ilvl", "corrupted", "mirrored", "fractured", "synthesised", "influences"],
+      "properties": {
+        "rarity": { "enum": ["Normal", "Magic", "Rare", "Unique"] },
+        "item_class": { "type": "string", "description": "RePoE item_class key." },
+        "base": { "type": "string" },
+        "name": { "type": ["string", "null"] },
+        "ilvl": { "type": "integer", "minimum": 1 },
+        "corrupted": { "type": "boolean" },
+        "mirrored": { "type": "boolean" },
+        "fractured": { "type": "boolean" },
+        "synthesised": { "type": "boolean" },
+        "influences": { "type": "array", "uniqueItems": true, "items": { "enum": ["shaper", "elder", "crusader", "redeemer", "hunter", "warlord"] } },
+        "open_prefixes": { "type": "integer", "minimum": 0 },
+        "open_suffixes": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "mods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "affix", "stat_ids", "values", "tier", "family"],
+        "properties": {
+          "source": { "enum": ["implicit", "explicit", "fractured", "crafted", "enchant", "corruption_implicit"] },
+          "affix": { "enum": ["prefix", "suffix", null] },
+          "stat_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "values": { "type": "array", "items": { "type": "number" }, "minItems": 1, "description": "Rolled values, same order as stat_ids." },
+          "tier": { "type": ["integer", "null"], "minimum": 1, "description": "Tier on this base (1 = best); null for implicits and crafts." },
+          "family": { "type": ["string", "null"], "description": "tier_sets family key, e.g. 'prefix:IncreasedLife'." },
+          "qualifies": { "type": "boolean", "description": "Passes the tier gate (explicit and fractured mods only)." }
+        }
+      }
+    },
+
+    "verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result", "best_buyer", "fit", "low_data", "reasons", "counted_stat_ids"],
+      "properties": {
+        "result": { "enum": ["KEEP", "PRICE_CHECK", "NO_BUYER", "NOT_SCORED", "UNSUPPORTED_LANGUAGE"] },
+        "best_buyer": { "type": ["string", "null"], "description": "Build node id named in 'Why?', or null." },
+        "fit": { "type": ["number", "null"], "description": "Best buyer's fit, rounded to 4 decimals. Engines must match within 1e-4." },
+        "low_data": { "type": "boolean" },
+        "reasons": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "keep_fit",
+              "partial_fit",
+              "niche_build_fit",
+              "no_fit",
+              "boost_base_value",
+              "boost_crafting_potential",
+              "boost_fractured_core_mod",
+              "cap_low_data",
+              "cap_not_validated",
+              "corrupted_open_slots_ignored",
+              "unique_price_lookup",
+              "cluster_jewel_price_lookup",
+              "unsupported_language"
+            ]
+          }
+        },
+        "counted_stat_ids": { "type": "array", "items": { "type": "string" }, "description": "Stats highlighted on the overlay for the best buyer (qualifying core mods)." },
+        "special_price_chaos": { "type": ["number", "null"] }
+      }
+    }
+  }
+}

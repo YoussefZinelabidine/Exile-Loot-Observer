@@ -1,0 +1,79 @@
+{
+  "id": "004-boots-no-buyer",
+  "description": "Boots with no core mods for any build: NO BUYER.",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Rare",
+    "item_class": "Boots",
+    "base": "Sorcerer Boots",
+    "name": "Dusk Stride",
+    "ilvl": 75,
+    "corrupted": false,
+    "mirrored": false,
+    "fractured": false,
+    "synthesised": false,
+    "influences": [],
+    "open_prefixes": 2,
+    "open_suffixes": 1
+  },
+  "mods": [
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "base_maximum_mana"
+      ],
+      "values": [
+        47
+      ],
+      "tier": 6,
+      "family": "prefix:IncreasedMana",
+      "qualifies": false
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "additional_intelligence"
+      ],
+      "values": [
+        30
+      ],
+      "tier": 5,
+      "family": "suffix:Intelligence",
+      "qualifies": false
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_stun_recovery_+%"
+      ],
+      "values": [
+        21
+      ],
+      "tier": 3,
+      "family": "suffix:StunRecovery",
+      "qualifies": true
+    }
+  ],
+  "verdict": {
+    "result": "NO_BUYER",
+    "best_buyer": null,
+    "fit": 0.0,
+    "low_data": false,
+    "reasons": [
+      "no_fit"
+    ],
+    "counted_stat_ids": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_fixture_note": "Single item in the shape of one entry of get-items 'items'. Hand-written; replace with a recorded response.",
+  "item": {
+    "verified": false,
+    "w": 1,
+    "h": 1,
+    "icon": "",
+    "league": "Covens",
+    "id": "67aa97edd2c4e99e4dc2befd527ece4eb78f68014c04fb90a692490bc32996ed",
+    "name": "Rapture Grasp",
+    "typeLine": "Sorcerer Gloves",
+    "baseType": "Sorcerer Gloves",
+    "rarity": "Rare",
+    "identified": true,
+    "ilvl": 84,
+    "frameType": 2,
+    "explicitMods": [
+      "+57 to maximum Mana",
+      "Gain 64 Life per Enemy Killed"
+    ],
+    "fracturedMods": [
+      "+107 to maximum Life"
+    ],
+    "fractured": true,
+    "inventoryId": "Gloves",
+    "x": 0,
+    "y": 0
+  }
+}

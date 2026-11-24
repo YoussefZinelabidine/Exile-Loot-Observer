@@ -1,0 +1,15 @@
+Classe d'objet: Anneaux
+Rareté: Rare
+Boucle de la Tempête
+Anneau de diamant
+--------
+Prérequis:
+Niveau: 35
+--------
+Niveau de l'objet: 84
+--------
+25% d'augmentation des chances globales de coup critique (implicite)
+--------
++108 à la Vie maximale
++47% à la Résistance au feu
++44% à la Résistance au froid

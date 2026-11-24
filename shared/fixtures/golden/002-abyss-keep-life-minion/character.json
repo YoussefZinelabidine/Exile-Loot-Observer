@@ -1,0 +1,24 @@
+{
+  "_fixture_note": "Abyss jewel in the shape of one entry of a belt's 'socketedItems' in get-items. Hand-written; replace with a recorded response.",
+  "item": {
+    "verified": false,
+    "w": 1,
+    "h": 1,
+    "icon": "",
+    "league": "Covens",
+    "id": "9a15070adee1451b88d18993c5d8f2409db5cbf081e3f23b9b0145300a20e9a7",
+    "name": "Grim Eye",
+    "typeLine": "Ghastly Eye Jewel",
+    "baseType": "Ghastly Eye Jewel",
+    "rarity": "Rare",
+    "identified": true,
+    "ilvl": 84,
+    "frameType": 2,
+    "explicitMods": [
+      "+38 to maximum Life",
+      "Minions have 11% increased maximum Life",
+      "Minions have +9% to all Elemental Resistances"
+    ],
+    "socket": 0
+  }
+}

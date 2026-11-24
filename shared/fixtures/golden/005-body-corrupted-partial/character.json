@@ -1,0 +1,27 @@
+{
+  "_fixture_note": "Single item in the shape of one entry of get-items 'items'. Hand-written; replace with a recorded response.",
+  "item": {
+    "verified": false,
+    "w": 1,
+    "h": 1,
+    "icon": "",
+    "league": "Covens",
+    "id": "cd401b9be70e15c34010ad18a8e14759958eeede3d438060183c902c97e974ee",
+    "name": "Ghoul Shroud",
+    "typeLine": "Vaal Regalia",
+    "baseType": "Vaal Regalia",
+    "rarity": "Rare",
+    "identified": true,
+    "ilvl": 86,
+    "frameType": 2,
+    "explicitMods": [
+      "105% increased Energy Shield",
+      "+20 to maximum Energy Shield",
+      "+20 to Intelligence"
+    ],
+    "corrupted": true,
+    "inventoryId": "BodyArmour",
+    "x": 0,
+    "y": 0
+  }
+}

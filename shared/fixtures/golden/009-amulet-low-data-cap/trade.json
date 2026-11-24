@@ -1,0 +1,113 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "4e05305b5b6e0f981b8fcec6fc766c47b7b593227f34637ffcd7425c1fc0f10c",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "c6a64969cdeebec72fed10f107ef1ee9cf03f72a67a1498e2bbf7df18d1bb2ed",
+      "name": "Doom Beads",
+      "typeLine": "Onyx Amulet",
+      "baseType": "Onyx Amulet",
+      "rarity": "Rare",
+      "identified": true,
+      "ilvl": 84,
+      "frameType": 2,
+      "implicitMods": [
+        "+13 to all Attributes"
+      ],
+      "explicitMods": [
+        "24% increased Spell Damage",
+        "+92 to maximum Life",
+        "18% increased Cast Speed"
+      ],
+      "extended": {
+        "mods": {
+          "explicit": [
+            {
+              "name": "Wizard's",
+              "tier": "P1",
+              "level": 76,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_2974417149",
+                  "min": "23",
+                  "max": "26"
+                }
+              ]
+            },
+            {
+              "name": "Rotund",
+              "tier": "P3",
+              "level": 36,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_3299347043",
+                  "min": "85",
+                  "max": "99"
+                }
+              ]
+            },
+            {
+              "name": "of Legerdemain",
+              "tier": "S1",
+              "level": 40,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_2891184298",
+                  "min": "17",
+                  "max": "20"
+                }
+              ]
+            }
+          ]
+        },
+        "hashes": {
+          "explicit": [
+            [
+              "explicit.stat_2974417149",
+              [
+                0
+              ]
+            ],
+            [
+              "explicit.stat_3299347043",
+              [
+                1
+              ]
+            ],
+            [
+              "explicit.stat_2891184298",
+              [
+                2
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

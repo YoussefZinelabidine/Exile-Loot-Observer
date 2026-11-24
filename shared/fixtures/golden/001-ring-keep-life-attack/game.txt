@@ -1,0 +1,21 @@
+Item Class: Rings
+Rarity: Rare
+Gale Coil
+Diamond Ring
+--------
+Requirements:
+Level: 67
+--------
+Item Level: 84
+--------
+{ Implicit Modifier — Critical }
+25(20-30)% increased Global Critical Strike Chance (implicit)
+--------
+{ Prefix Modifier "Virile" (Tier: 1) — Life }
++108(100-114) to maximum Life
+{ Suffix Modifier "of Tzteosh" (Tier: 1) — Elemental, Fire, Resistance }
++47(46-48)% to Fire Resistance
+{ Suffix Modifier "of the Ice" (Tier: 2) — Elemental, Cold, Resistance }
++44(42-45)% to Cold Resistance
+{ Suffix Modifier "of the Thunderhead" (Tier: 5) — Elemental, Lightning, Resistance }
++26(24-29)% to Lightning Resistance

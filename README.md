@@ -39,4 +39,4 @@ Copy `.env.example` to `.env` and fill in the values. `.env` is never committed.
 
 This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
 
-Stash search fragments and trade stat IDs come from [poe.re](https://poe.re)'s generated data, used under its data terms. Mod data comes from [RePoE (repoe-fork)](https://github.com/repoe-fork/repoe). The item parser starts from [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade) (MIT licence; notice kept with the code).
+Stash search fragments come from [poe.re](https://poe.re)'s generated data, used under its data terms. Mod data and trade stat IDs come from [RePoE (repoe-fork)](https://github.com/repoe-fork/repoe). The item parser starts from [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade) (MIT licence; notice kept with the code).

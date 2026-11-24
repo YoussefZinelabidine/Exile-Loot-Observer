@@ -1,0 +1,25 @@
+Item Class: Rings
+Rarity: Unique
+Ventor's Gamble
+Gold Ring
+--------
+Requirements:
+Level: 65
+--------
+Item Level: 83
+--------
+{ Implicit Modifier — Drop }
++12(6-15)% to Item Rarity (implicit)
+--------
+{ Unique Modifier — Life }
++45(0-60) to maximum Life
+{ Unique Modifier — Drop }
+4(-10-10)% increased Quantity of Items found
+{ Unique Modifier — Drop }
++22(0-40)% to Item Rarity
+{ Unique Modifier — Elemental, Fire, Resistance }
++31(-25-50)% to Fire Resistance
+{ Unique Modifier — Elemental, Cold, Resistance }
+-8(-25-50)% to Cold Resistance
+{ Unique Modifier — Elemental, Lightning, Resistance }
++40(-25-50)% to Lightning Resistance

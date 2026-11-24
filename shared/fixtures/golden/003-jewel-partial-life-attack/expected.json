@@ -1,0 +1,68 @@
+{
+  "id": "003-jewel-partial-life-attack",
+  "description": "Cobalt jewel with one strong core mod: PRICE CHECK (partial fit).",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Rare",
+    "item_class": "Jewel",
+    "base": "Cobalt Jewel",
+    "name": "Storm Spark",
+    "ilvl": 80,
+    "corrupted": false,
+    "mirrored": false,
+    "fractured": false,
+    "synthesised": false,
+    "influences": [],
+    "open_prefixes": 1,
+    "open_suffixes": 1
+  },
+  "mods": [
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "maximum_life_+%"
+      ],
+      "values": [
+        6
+      ],
+      "tier": 1,
+      "family": "prefix:PercentIncreasedLifeForJewel",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_stun_recovery_+%"
+      ],
+      "values": [
+        30
+      ],
+      "tier": 1,
+      "family": "suffix:StunRecoveryForJewel",
+      "qualifies": true
+    }
+  ],
+  "verdict": {
+    "result": "PRICE_CHECK",
+    "best_buyer": "arch:life-attack",
+    "fit": 0.5,
+    "low_data": false,
+    "reasons": [
+      "partial_fit"
+    ],
+    "counted_stat_ids": [
+      "maximum_life_+%"
+    ]
+  }
+}

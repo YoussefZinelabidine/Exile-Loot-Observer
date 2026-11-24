@@ -1,0 +1,79 @@
+{
+  "id": "006-gloves-fractured-core",
+  "description": "Gloves whose only core mod is fractured life: NO BUYER lifted to PRICE CHECK by the fractured boost.",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Rare",
+    "item_class": "Gloves",
+    "base": "Sorcerer Gloves",
+    "name": "Rapture Grasp",
+    "ilvl": 84,
+    "corrupted": false,
+    "mirrored": false,
+    "fractured": true,
+    "synthesised": false,
+    "influences": [],
+    "open_prefixes": 1,
+    "open_suffixes": 2
+  },
+  "mods": [
+    {
+      "source": "fractured",
+      "affix": "prefix",
+      "stat_ids": [
+        "base_maximum_life"
+      ],
+      "values": [
+        107
+      ],
+      "tier": 2,
+      "family": "prefix:IncreasedLife",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "base_maximum_mana"
+      ],
+      "values": [
+        57
+      ],
+      "tier": 4,
+      "family": "prefix:IncreasedMana",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_life_gained_on_enemy_death"
+      ],
+      "values": [
+        64
+      ],
+      "tier": 2,
+      "family": "suffix:LifeGainedFromEnemyDeath",
+      "qualifies": true
+    }
+  ],
+  "verdict": {
+    "result": "PRICE_CHECK",
+    "best_buyer": null,
+    "fit": 0.16,
+    "low_data": false,
+    "reasons": [
+      "boost_fractured_core_mod"
+    ],
+    "counted_stat_ids": []
+  }
+}

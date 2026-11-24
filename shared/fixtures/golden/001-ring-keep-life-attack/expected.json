@@ -1,0 +1,108 @@
+{
+  "id": "001-ring-keep-life-attack",
+  "description": "Rare ring with life and two qualifying resistances: KEEP for Life · Attack.",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Rare",
+    "item_class": "Ring",
+    "base": "Diamond Ring",
+    "name": "Gale Coil",
+    "ilvl": 84,
+    "corrupted": false,
+    "mirrored": false,
+    "fractured": false,
+    "synthesised": false,
+    "influences": [],
+    "open_prefixes": 2,
+    "open_suffixes": 0
+  },
+  "mods": [
+    {
+      "source": "implicit",
+      "affix": null,
+      "stat_ids": [
+        "critical_strike_chance_+%"
+      ],
+      "values": [
+        25
+      ],
+      "tier": null,
+      "family": null
+    },
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "base_maximum_life"
+      ],
+      "values": [
+        108
+      ],
+      "tier": 1,
+      "family": "prefix:IncreasedLife",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_fire_damage_resistance_%"
+      ],
+      "values": [
+        47
+      ],
+      "tier": 1,
+      "family": "suffix:FireResistance",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_cold_damage_resistance_%"
+      ],
+      "values": [
+        44
+      ],
+      "tier": 2,
+      "family": "suffix:ColdResistance",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_lightning_damage_resistance_%"
+      ],
+      "values": [
+        26
+      ],
+      "tier": 5,
+      "family": "suffix:LightningResistance",
+      "qualifies": false
+    }
+  ],
+  "verdict": {
+    "result": "KEEP",
+    "best_buyer": "arch:life-attack",
+    "fit": 0.6087,
+    "low_data": false,
+    "reasons": [
+      "keep_fit"
+    ],
+    "counted_stat_ids": [
+      "base_maximum_life",
+      "base_fire_damage_resistance_%",
+      "base_cold_damage_resistance_%"
+    ]
+  }
+}

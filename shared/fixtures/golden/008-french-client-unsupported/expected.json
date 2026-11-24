@@ -1,0 +1,24 @@
+{
+  "id": "008-french-client-unsupported",
+  "description": "Item copied from the French client: unsupported language.",
+  "source": "hand-written",
+  "forms": [
+    "game"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": null,
+  "mods": [],
+  "verdict": {
+    "result": "UNSUPPORTED_LANGUAGE",
+    "best_buyer": null,
+    "fit": null,
+    "low_data": false,
+    "reasons": [
+      "unsupported_language"
+    ],
+    "counted_stat_ids": []
+  }
+}

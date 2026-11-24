@@ -1,0 +1,111 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "cbf4fe3cd14c811fc1a02edd6b991ea9bf1df8d7fcc9a900fc8a491066e83151",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "cd401b9be70e15c34010ad18a8e14759958eeede3d438060183c902c97e974ee",
+      "name": "Ghoul Shroud",
+      "typeLine": "Vaal Regalia",
+      "baseType": "Vaal Regalia",
+      "rarity": "Rare",
+      "identified": true,
+      "ilvl": 86,
+      "frameType": 2,
+      "explicitMods": [
+        "105% increased Energy Shield",
+        "+20 to maximum Energy Shield",
+        "+20 to Intelligence"
+      ],
+      "corrupted": true,
+      "extended": {
+        "mods": {
+          "explicit": [
+            {
+              "name": "Unfaltering",
+              "tier": "P1",
+              "level": 86,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_4015621042",
+                  "min": "101",
+                  "max": "110"
+                }
+              ]
+            },
+            {
+              "name": "Glowing",
+              "tier": "P8",
+              "level": 23,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_4052037485",
+                  "min": "17",
+                  "max": "23"
+                }
+              ]
+            },
+            {
+              "name": "of the Prodigy",
+              "tier": "S7",
+              "level": 22,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_328541901",
+                  "min": "18",
+                  "max": "22"
+                }
+              ]
+            }
+          ]
+        },
+        "hashes": {
+          "explicit": [
+            [
+              "explicit.stat_4015621042",
+              [
+                0
+              ]
+            ],
+            [
+              "explicit.stat_4052037485",
+              [
+                1
+              ]
+            ],
+            [
+              "explicit.stat_328541901",
+              [
+                2
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

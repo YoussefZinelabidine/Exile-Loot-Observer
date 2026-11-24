@@ -10,16 +10,23 @@ Decisions made by the owner during implementation. The design decisions from pla
 | 2026-11-23 | Skeleton code is written by the Sonnet agents; the orchestrator writes specs, docs and `shared/` | Rule 2 |
 | 2026-11-23 | Agents work directly in the owner's checkout on `develop`, each only in its own folder; the owner commits after review | |
 | 2026-11-23 | Dev database: Docker container `exile_loot_observer`, image `postgres:18`, port 5432 | Credentials only in `.env` |
+| 2026-11-23 | Golden items: Phase 0 defines the format and a hand-written seed set (~8–10 items, all three forms); real game copies replace/extend it later; full 30–50 after the rate limiter exists (Phase 2) | |
+| 2026-11-23 | Golden verdicts are scored against a synthetic fixture snapshot (made-up demand and thresholds); they test that Python and TypeScript scoring agree, not that verdicts are true | |
+| 2026-11-23 | `demand_low` is computed on the server and shipped in the daily file; the app only reads it. Method chosen in the Phase 2 aggregation job | |
+| 2026-11-23 | Unvalidated thresholds are `null` plus `validated: false`; the app never shows KEEP until they are set | |
+| 2026-11-23 | Snapshot compression: gzip only | |
+| 2026-11-23 | User-Agent format fixed in `shared/`; values from `ELO_CONTACT_EMAIL` / `ELO_PROJECT_URL`; the crawler refuses to call GGG while they are empty | |
+| 2026-11-23 | Ladder rate-limit reference values: 5:5 and 10:10 (HANDOFF's 15:10 treated as a typo); re-check at the first smoke test | |
+| 2026-11-23 | RePoE and poe.re data downloaded once (orchestrator, outside the repo) for real stat IDs in fixtures | RePoE 3.30.0.4.3; poe.re 3.30.0.4.3 (17bc109) |
+| 2026-11-23 | Trade stat IDs for "Open trade search" come from RePoE `stat_translations.json` `trade_stats`, not poe.re's trade-ID map | poe.re's map covers only 127 stats. **Design doc to update.** |
+| 2026-11-23 | A KEEP-level fit for a niche build (below `min_build_accounts`) gives PRICE CHECK and names that build | |
+| 2026-11-23 | Snapshot readers (the app) ignore unknown fields; the publisher validates strictly. New optional fields need no schema version bump | |
+| 2026-11-23 | Tier ladders exclude PoE Royale mods (`*Royale*` mod ids) | Found by the Phase 0 review |
+| 2026-11-23 | RePoE files are served at `https://repoe-fork.github.io/<file>` (not `/data/<file>`) | **Design doc and HANDOFF to update.** |
 
 ## Open questions (not decided yet)
 
-1. Golden item sourcing (game texts, character-API JSON, trade-API JSON) and whether expected verdicts use a synthetic fixture snapshot.
-2. `demand_low`: computed server-side and shipped, or computed in both engines; and its method.
-3. Unvalidated thresholds stored as `null` (app caps verdicts at PRICE CHECK).
-4. Plain Ctrl+C vs Ctrl+Alt+C for the advanced item format in 3.30 (needs an in-game check).
-5. Ladder rate-limit rules: is `15:10` (HANDOFF) a typo? The design doc lists 5:5 and 10:10 only.
-6. Snapshot compression: gzip only (recommended) vs gzip or zstd.
-7. User-Agent contact email and project URL; whether the repo is public.
+4. Plain Ctrl+C vs Ctrl+Alt+C for the advanced item format in 3.30 (needs an in-game check). Seed fixtures use the advanced format.
 8. Crawler (Phase 1): how the one shared limiter is shared across processes; sync vs async HTTP client; constructor parameters for `SafeHttpClient`, limiter, breaker and budget; whether one character (items + tree) costs 1 budget unit.
 9. App: add `tauri-plugin-opener` for opening links and trade searches in the system browser (needed by Frontend step 7), now or later.
 10. App: installer type: NSIS only (recommended by review) vs `bundle.targets: "all"` (current).

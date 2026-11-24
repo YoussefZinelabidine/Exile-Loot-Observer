@@ -1,0 +1,19 @@
+Item Class: Amulets
+Rarity: Rare
+Doom Beads
+Onyx Amulet
+--------
+Requirements:
+Level: 60
+--------
+Item Level: 84
+--------
+{ Implicit Modifier — Attribute }
++13(10-16) to all Attributes (implicit)
+--------
+{ Prefix Modifier "Wizard's" (Tier: 1) — Caster Damage, Damage, Caster }
+24(23-26)% increased Spell Damage
+{ Prefix Modifier "Rotund" (Tier: 3) — Life }
++92(85-99) to maximum Life
+{ Suffix Modifier "of Legerdemain" (Tier: 1) — Caster, Speed }
+18(17-20)% increased Cast Speed

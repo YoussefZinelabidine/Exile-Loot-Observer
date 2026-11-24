@@ -1,0 +1,30 @@
+{
+  "_fixture_note": "Single item in the shape of one entry of get-items 'items'. Hand-written; replace with a recorded response.",
+  "item": {
+    "verified": false,
+    "w": 1,
+    "h": 1,
+    "icon": "",
+    "league": "Covens",
+    "id": "fa44f03f0a12d10c71ac521f44101778526d0a9f51922fb2fb3d237207029bde",
+    "name": "Gale Coil",
+    "typeLine": "Diamond Ring",
+    "baseType": "Diamond Ring",
+    "rarity": "Rare",
+    "identified": true,
+    "ilvl": 84,
+    "frameType": 2,
+    "implicitMods": [
+      "25% increased Global Critical Strike Chance"
+    ],
+    "explicitMods": [
+      "+108 to maximum Life",
+      "+47% to Fire Resistance",
+      "+44% to Cold Resistance",
+      "+26% to Lightning Resistance"
+    ],
+    "inventoryId": "Ring",
+    "x": 0,
+    "y": 0
+  }
+}

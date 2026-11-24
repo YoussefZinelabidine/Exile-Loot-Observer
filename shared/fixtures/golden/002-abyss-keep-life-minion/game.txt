@@ -1,0 +1,18 @@
+Item Class: Abyss Jewels
+Rarity: Rare
+Grim Eye
+Ghastly Eye Jewel
+--------
+Requirements:
+Level: 65
+--------
+Item Level: 84
+--------
+{ Prefix Modifier "Stalwart" (Tier: 1) — Life }
++38(36-40) to maximum Life
+{ Suffix Modifier "of Fortitude" (Tier: 1) — Life, Minion }
+Minions have 11(8-12)% increased maximum Life
+{ Suffix Modifier "of Acclimatisation" (Tier: 1) — Elemental, Resistance, Minion }
+Minions have +9(6-10)% to all Elemental Resistances
+--------
+Place into an Abyssal Socket on an Item or into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.

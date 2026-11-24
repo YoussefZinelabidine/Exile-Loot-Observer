@@ -1,0 +1,23 @@
+Item Class: Body Armours
+Rarity: Rare
+Ghoul Shroud
+Vaal Regalia
+--------
+Energy Shield: 418 (augmented)
+--------
+Requirements:
+Level: 68
+Int: 194
+--------
+Sockets: B-B-B B 
+--------
+Item Level: 86
+--------
+{ Prefix Modifier "Unfaltering" (Tier: 1) — Defences, Energy Shield }
+105(101-110)% increased Energy Shield
+{ Prefix Modifier "Glowing" (Tier: 8) — Defences, Energy Shield }
++20(17-23) to maximum Energy Shield
+{ Suffix Modifier "of the Prodigy" (Tier: 7) — Attribute }
++20(18-22) to Intelligence
+--------
+Corrupted

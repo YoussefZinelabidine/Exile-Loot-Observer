@@ -1,0 +1,27 @@
+{
+  "schema": "elo.manifest",
+  "schema_version": 1,
+  "published_at": "2026-11-23T05:10:00Z",
+  "league": "Covens",
+  "min_app_version": "0.0.1",
+  "files": [
+    {
+      "kind": "patch",
+      "name": "patch-3.30.0.4.3.json.gz",
+      "schema_version": 1,
+      "sha256": "ba794c5fbc008b6f8b72de1063a6f1583dbc41d62d593f090e2f0737679f6333",
+      "bytes": 8728,
+      "uncompressed_bytes": 107482,
+      "game_patch": "3.30.0.4.3"
+    },
+    {
+      "kind": "daily",
+      "name": "daily-2026-11-23.json.gz",
+      "schema_version": 1,
+      "sha256": "d57a8b5b391946ee5480e44450d9046c6a807886ad25455bde9d3cfda7b17179",
+      "bytes": 2238,
+      "uncompressed_bytes": 22558,
+      "crawl_date": "2026-11-23"
+    }
+  ]
+}

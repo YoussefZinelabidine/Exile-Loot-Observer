@@ -1,0 +1,13 @@
+Item Class: Jewels
+Rarity: Rare
+Storm Spark
+Cobalt Jewel
+--------
+Item Level: 80
+--------
+{ Prefix Modifier "Vivid" (Tier: 1) — Life }
+6(5-7)% increased maximum Life
+{ Suffix Modifier "of Recovery" (Tier: 1) }
+30(25-35)% increased Stun and Block Recovery
+--------
+Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.

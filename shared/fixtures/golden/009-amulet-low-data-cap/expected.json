@@ -1,0 +1,96 @@
+{
+  "id": "009-amulet-low-data-cap",
+  "description": "Amulet that fits Life · Spell well enough for KEEP, but that build is low data: capped at PRICE CHECK.",
+  "source": "hand-written",
+  "forms": [
+    "game",
+    "character",
+    "trade"
+  ],
+  "snapshot": {
+    "patch": "snapshot/patch.json",
+    "daily": "snapshot/daily.json"
+  },
+  "item": {
+    "rarity": "Rare",
+    "item_class": "Amulet",
+    "base": "Onyx Amulet",
+    "name": "Doom Beads",
+    "ilvl": 84,
+    "corrupted": false,
+    "mirrored": false,
+    "fractured": false,
+    "synthesised": false,
+    "influences": [],
+    "open_prefixes": 1,
+    "open_suffixes": 2
+  },
+  "mods": [
+    {
+      "source": "implicit",
+      "affix": null,
+      "stat_ids": [
+        "additional_all_attributes"
+      ],
+      "values": [
+        13
+      ],
+      "tier": null,
+      "family": null
+    },
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "spell_damage_+%"
+      ],
+      "values": [
+        24
+      ],
+      "tier": 1,
+      "family": "prefix:SpellDamage",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "prefix",
+      "stat_ids": [
+        "base_maximum_life"
+      ],
+      "values": [
+        92
+      ],
+      "tier": 3,
+      "family": "prefix:IncreasedLife",
+      "qualifies": true
+    },
+    {
+      "source": "explicit",
+      "affix": "suffix",
+      "stat_ids": [
+        "base_cast_speed_+%"
+      ],
+      "values": [
+        18
+      ],
+      "tier": 1,
+      "family": "suffix:IncreasedCastSpeed",
+      "qualifies": true
+    }
+  ],
+  "verdict": {
+    "result": "PRICE_CHECK",
+    "best_buyer": "arch:life-spell",
+    "fit": 0.75,
+    "low_data": true,
+    "reasons": [
+      "keep_fit",
+      "cap_low_data"
+    ],
+    "counted_stat_ids": [
+      "spell_damage_+%",
+      "base_cast_speed_+%",
+      "base_maximum_life"
+    ]
+  }
+}

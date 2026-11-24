@@ -1,0 +1,1530 @@
+{
+  "schema": "elo.daily",
+  "schema_version": 1,
+  "league": "Covens",
+  "patch_ref": "3.30.0.4.3",
+  "crawl_date": "2026-11-23",
+  "built_at": "2026-11-23T05:00:00Z",
+  "validated": true,
+  "freshness": {
+    "characters_used": 8400,
+    "accounts_used": 4000,
+    "oldest_gear_days": 6.5,
+    "ladder_coverage": 0.71
+  },
+  "params": {
+    "thresholds": {
+      "default": {
+        "keep_fit": 0.5,
+        "price_check_fit": 0.25,
+        "min_build_accounts": 100,
+        "craftable_discount": 0.0,
+        "base_value_min_chaos": 20,
+        "base_value_min_ilvl": 84
+      },
+      "by_item_class": {}
+    },
+    "tier_gate": {
+      "top_fraction": 0.4,
+      "always_top_tiers": 2
+    },
+    "min_effective_accounts_own_node": 150,
+    "core_min_effective_obs": 10,
+    "stale_after_days": 3
+  },
+  "build_nodes": [
+    {
+      "id": "all",
+      "level": "all",
+      "parent": null,
+      "label": "All builds",
+      "accounts": 4000,
+      "effective_accounts": 3720.0,
+      "shown_on_own": true,
+      "low_data": false
+    },
+    {
+      "id": "arch:life-attack",
+      "level": "archetype",
+      "parent": "all",
+      "label": "Life · Attack",
+      "defence": "life",
+      "damage": "attack",
+      "flags": [],
+      "accounts": 1800,
+      "effective_accounts": 1690.5,
+      "shown_on_own": true,
+      "low_data": false
+    },
+    {
+      "id": "skill:lightning-strike",
+      "level": "main_skill",
+      "parent": "arch:life-attack",
+      "label": "Lightning Strike",
+      "defence": "life",
+      "damage": "attack",
+      "flags": [],
+      "main_skill": "Lightning Strike",
+      "accounts": 400,
+      "effective_accounts": 371.2,
+      "shown_on_own": true,
+      "low_data": false
+    },
+    {
+      "id": "arch:es-spell",
+      "level": "archetype",
+      "parent": "all",
+      "label": "Energy Shield · Spell",
+      "defence": "es",
+      "damage": "spell",
+      "flags": [],
+      "accounts": 900,
+      "effective_accounts": 842.0,
+      "shown_on_own": true,
+      "low_data": false
+    },
+    {
+      "id": "arch:life-minion",
+      "level": "archetype",
+      "parent": "all",
+      "label": "Life · Minion",
+      "defence": "life",
+      "damage": "minion",
+      "flags": [],
+      "accounts": 600,
+      "effective_accounts": 556.3,
+      "shown_on_own": true,
+      "low_data": false
+    },
+    {
+      "id": "skill:raise-spectre",
+      "level": "main_skill",
+      "parent": "arch:life-minion",
+      "label": "Raise Spectre",
+      "defence": "life",
+      "damage": "minion",
+      "flags": [],
+      "main_skill": "Raise Spectre",
+      "accounts": 160,
+      "effective_accounts": 141.5,
+      "shown_on_own": false,
+      "low_data": true
+    },
+    {
+      "id": "arch:life-spell",
+      "level": "archetype",
+      "parent": "all",
+      "label": "Life · Spell",
+      "defence": "life",
+      "damage": "spell",
+      "flags": [],
+      "accounts": 150,
+      "effective_accounts": 61.0,
+      "shown_on_own": true,
+      "low_data": true
+    }
+  ],
+  "demand": {
+    "Ring": {
+      "arch:life-attack": {
+        "effective_items": 1561.0,
+        "mods": [
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "elemental_damage_with_attack_skills_+%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 30.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "skill:lightning-strike": {
+        "effective_items": 366.0,
+        "mods": [
+          {
+            "stat_id": "elemental_damage_with_attack_skills_+%",
+            "core": true,
+            "demand": 0.4375,
+            "demand_low": 0.35,
+            "share": 0.55,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.3125,
+            "demand_low": 0.25,
+            "share": 0.45,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.15,
+            "demand_low": 0.12,
+            "share": 0.32,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "additional_dexterity",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "arch:es-spell": {
+        "effective_items": 1554.0,
+        "mods": [
+          {
+            "stat_id": "base_maximum_energy_shield",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_cast_speed_+%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "additional_intelligence",
+            "core": true,
+            "demand": 0.15,
+            "demand_low": 0.12,
+            "share": 0.32,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_maximum_mana",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3700.0,
+        "mods": [
+          {
+            "stat_id": "elemental_damage_with_attack_skills_+%",
+            "core": true,
+            "demand": 0.385,
+            "demand_low": 0.315,
+            "share": 0.5,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_energy_shield",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.275,
+            "demand_low": 0.225,
+            "share": 0.4,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cast_speed_+%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": false,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "additional_intelligence",
+            "core": false,
+            "demand": 0.132,
+            "demand_low": 0.108,
+            "share": 0.27,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "additional_dexterity",
+            "core": false,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_maximum_mana",
+            "core": false,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    },
+    "Amulet": {
+      "arch:life-spell": {
+        "effective_items": 1554.0,
+        "mods": [
+          {
+            "stat_id": "spell_damage_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_cast_speed_+%",
+            "core": true,
+            "demand": 0.3125,
+            "demand_low": 0.25,
+            "share": 0.45,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "critical_strike_chance_+%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_critical_strike_multiplier_+",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": true,
+            "demand": 0.0625,
+            "demand_low": 0.05,
+            "share": 0.25,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "arch:life-attack": {
+        "effective_items": 1554.0,
+        "mods": [
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_critical_strike_multiplier_+",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3650.0,
+        "mods": [
+          {
+            "stat_id": "spell_damage_+%",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_cast_speed_+%",
+            "core": true,
+            "demand": 0.275,
+            "demand_low": 0.225,
+            "share": 0.4,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_critical_strike_multiplier_+",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "critical_strike_chance_+%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": false,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": false,
+            "demand": 0.055,
+            "demand_low": 0.045,
+            "share": 0.2,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    },
+    "Boots": {
+      "arch:life-attack": {
+        "effective_items": 1554.0,
+        "mods": [
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_movement_velocity_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "arch:es-spell": {
+        "effective_items": 1554.0,
+        "mods": [
+          {
+            "stat_id": "base_movement_velocity_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "local_energy_shield",
+            "core": true,
+            "demand": 0.3125,
+            "demand_low": 0.25,
+            "share": 0.45,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "local_energy_shield_+%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3600.0,
+        "mods": [
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_movement_velocity_+%",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "local_energy_shield",
+            "core": true,
+            "demand": 0.275,
+            "demand_low": 0.225,
+            "share": 0.4,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "local_energy_shield_+%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    },
+    "Gloves": {
+      "arch:life-attack": {
+        "effective_items": 1561.0,
+        "mods": [
+          {
+            "stat_id": "attack_speed_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 30.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3575.0,
+        "mods": [
+          {
+            "stat_id": "attack_speed_+%",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_fire_damage_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_lightning_damage_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "accuracy_rating",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    },
+    "Body Armour": {
+      "arch:es-spell": {
+        "effective_items": 1561.0,
+        "mods": [
+          {
+            "stat_id": "local_energy_shield_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "local_energy_shield",
+            "core": true,
+            "demand": 0.3125,
+            "demand_low": 0.25,
+            "share": 0.45,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_mana",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "energy_shield_recharge_rate_+%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "additional_intelligence",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.075,
+            "demand_low": 0.06,
+            "share": 0.26,
+            "effective_obs": 30.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3575.0,
+        "mods": [
+          {
+            "stat_id": "local_energy_shield_+%",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "local_energy_shield",
+            "core": true,
+            "demand": 0.275,
+            "demand_low": 0.225,
+            "share": 0.4,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_mana",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "energy_shield_recharge_rate_+%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "additional_intelligence",
+            "core": true,
+            "demand": 0.088,
+            "demand_low": 0.072,
+            "share": 0.23,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.088,
+            "demand_low": 0.072,
+            "share": 0.23,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_cold_damage_resistance_%",
+            "core": true,
+            "demand": 0.066,
+            "demand_low": 0.054,
+            "share": 0.21,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    },
+    "Jewel": {
+      "arch:life-attack": {
+        "effective_items": 1547.0,
+        "mods": [
+          {
+            "stat_id": "maximum_life_+%",
+            "core": true,
+            "demand": 0.4375,
+            "demand_low": 0.35,
+            "share": 0.55,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "attack_speed_+%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "attack_and_cast_speed_+%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "arch:es-spell": {
+        "effective_items": 1554.0,
+        "mods": [
+          {
+            "stat_id": "maximum_energy_shield_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_cast_speed_+%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "spell_damage_+%",
+            "core": true,
+            "demand": 0.1875,
+            "demand_low": 0.15,
+            "share": 0.35,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "energy_shield_recharge_rate_+%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3625.0,
+        "mods": [
+          {
+            "stat_id": "maximum_life_+%",
+            "core": true,
+            "demand": 0.385,
+            "demand_low": 0.315,
+            "share": 0.5,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "maximum_energy_shield_+%",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_cast_speed_+%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "attack_speed_+%",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "spell_damage_+%",
+            "core": true,
+            "demand": 0.165,
+            "demand_low": 0.135,
+            "share": 0.3,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "attack_and_cast_speed_+%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "energy_shield_recharge_rate_+%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_chaos_damage_resistance_%",
+            "core": false,
+            "demand": 0.088,
+            "demand_low": 0.072,
+            "share": 0.23,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    },
+    "AbyssJewel": {
+      "arch:life-minion": {
+        "effective_items": 1561.0,
+        "mods": [
+          {
+            "stat_id": "minion_maximum_life_+%",
+            "core": true,
+            "demand": 0.3125,
+            "demand_low": 0.25,
+            "share": 0.45,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "minion_elemental_resistance_%",
+            "core": true,
+            "demand": 0.15,
+            "demand_low": 0.12,
+            "share": 0.32,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "minion_damage_+%_if_have_used_a_minion_skill_recently",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "minion_movement_speed_+%",
+            "core": true,
+            "demand": 0.1,
+            "demand_low": 0.08,
+            "share": 0.28,
+            "effective_obs": 40.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "minion_life_regeneration_rate_per_second",
+            "core": true,
+            "demand": 0.075,
+            "demand_low": 0.06,
+            "share": 0.26,
+            "effective_obs": 35.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": true,
+            "demand": 0.0625,
+            "demand_low": 0.05,
+            "share": 0.25,
+            "effective_obs": 30.0,
+            "demand_tier": "B"
+          }
+        ]
+      },
+      "skill:raise-spectre": {
+        "effective_items": 352.0,
+        "mods": [
+          {
+            "stat_id": "minion_maximum_life_+%",
+            "core": true,
+            "demand": 0.375,
+            "demand_low": 0.3,
+            "share": 0.5,
+            "effective_obs": 60.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 55.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "minion_elemental_resistance_%",
+            "core": true,
+            "demand": 0.25,
+            "demand_low": 0.2,
+            "share": 0.4,
+            "effective_obs": 50.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "minion_movement_speed_+%",
+            "core": true,
+            "demand": 0.125,
+            "demand_low": 0.1,
+            "share": 0.3,
+            "effective_obs": 45.0,
+            "demand_tier": "A"
+          }
+        ]
+      },
+      "all": {
+        "effective_items": 3575.0,
+        "mods": [
+          {
+            "stat_id": "minion_maximum_life_+%",
+            "core": true,
+            "demand": 0.33,
+            "demand_low": 0.27,
+            "share": 0.45,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "base_maximum_life",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "S"
+          },
+          {
+            "stat_id": "minion_elemental_resistance_%",
+            "core": true,
+            "demand": 0.22,
+            "demand_low": 0.18,
+            "share": 0.35,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "minion_damage_+%_if_have_used_a_minion_skill_recently",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "A"
+          },
+          {
+            "stat_id": "minion_movement_speed_+%",
+            "core": true,
+            "demand": 0.11,
+            "demand_low": 0.09,
+            "share": 0.25,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "minion_life_regeneration_rate_per_second",
+            "core": true,
+            "demand": 0.066,
+            "demand_low": 0.054,
+            "share": 0.21,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          },
+          {
+            "stat_id": "base_resist_all_elements_%",
+            "core": true,
+            "demand": 0.055,
+            "demand_low": 0.045,
+            "share": 0.2,
+            "effective_obs": 80.0,
+            "demand_tier": "B"
+          }
+        ]
+      }
+    }
+  },
+  "base_values": [
+    {
+      "base": "Vaal Regalia",
+      "min_ilvl": 86,
+      "influence": null,
+      "chaos": 12,
+      "worn_share": 0.21
+    },
+    {
+      "base": "Sorcerer Gloves",
+      "min_ilvl": 84,
+      "influence": null,
+      "chaos": 5,
+      "worn_share": 0.18
+    },
+    {
+      "base": "Sorcerer Boots",
+      "min_ilvl": 84,
+      "influence": null,
+      "chaos": 6,
+      "worn_share": 0.15
+    }
+  ],
+  "special_prices": [
+    {
+      "kind": "unique",
+      "name": "Ventor's Gamble",
+      "base": "Gold Ring",
+      "variant": null,
+      "links": null,
+      "chaos": 3
+    }
+  ],
+  "currency": {
+    "divine_chaos": 180
+  }
+}

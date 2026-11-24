@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elo.local/schema/manifest.schema.json",
+  "title": "ELO snapshot manifest",
+  "description": "Small uncompressed JSON published next to the snapshot files on GitHub Releases. The app reads it first, then downloads only files whose sha256 changed, and verifies each download against it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "published_at", "league", "files"],
+  "properties": {
+    "schema": { "const": "elo.manifest" },
+    "schema_version": { "const": 1 },
+    "published_at": { "type": "string", "format": "date-time" },
+    "league": { "type": "string" },
+    "min_app_version": { "type": "string", "description": "Oldest app version that can read these files; older apps keep their cached snapshot and ask to update." },
+    "files": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "name", "schema_version", "sha256", "bytes", "uncompressed_bytes"],
+        "properties": {
+          "kind": { "enum": ["patch", "daily"] },
+          "name": { "type": "string", "pattern": "^[A-Za-z0-9._-]+\\.json\\.gz$" },
+          "schema_version": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "Of the compressed file." },
+          "bytes": { "type": "integer", "minimum": 1, "description": "Compressed size. Budget: daily < 500 KB." },
+          "uncompressed_bytes": { "type": "integer", "minimum": 1 },
+          "game_patch": { "type": "string", "description": "patch files only" },
+          "crawl_date": { "type": "string", "format": "date", "description": "daily files only" }
+        }
+      }
+    }
+  }
+}

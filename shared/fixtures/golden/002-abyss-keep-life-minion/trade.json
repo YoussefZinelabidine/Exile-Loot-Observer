@@ -1,0 +1,110 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "1c76de1982fe2fb5c3c0c56885e5f1657aae12f69ca48a8ed103bb79125f8b69",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "9a15070adee1451b88d18993c5d8f2409db5cbf081e3f23b9b0145300a20e9a7",
+      "name": "Grim Eye",
+      "typeLine": "Ghastly Eye Jewel",
+      "baseType": "Ghastly Eye Jewel",
+      "rarity": "Rare",
+      "identified": true,
+      "ilvl": 84,
+      "frameType": 2,
+      "explicitMods": [
+        "+38 to maximum Life",
+        "Minions have 11% increased maximum Life",
+        "Minions have +9% to all Elemental Resistances"
+      ],
+      "extended": {
+        "mods": {
+          "explicit": [
+            {
+              "name": "Stalwart",
+              "tier": "P1",
+              "level": 82,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_3299347043",
+                  "min": "36",
+                  "max": "40"
+                }
+              ]
+            },
+            {
+              "name": "of Fortitude",
+              "tier": "S1",
+              "level": 1,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_770672621",
+                  "min": "8",
+                  "max": "12"
+                }
+              ]
+            },
+            {
+              "name": "of Acclimatisation",
+              "tier": "S1",
+              "level": 1,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_1423639565",
+                  "min": "6",
+                  "max": "10"
+                }
+              ]
+            }
+          ]
+        },
+        "hashes": {
+          "explicit": [
+            [
+              "explicit.stat_3299347043",
+              [
+                0
+              ]
+            ],
+            [
+              "explicit.stat_770672621",
+              [
+                1
+              ]
+            ],
+            [
+              "explicit.stat_1423639565",
+              [
+                2
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "_fixture_note": "One result of /api/trade/fetch. Hand-written; replace with a recorded response.",
+  "result": {
+    "id": "5339664757cef1ffcdc9d8415962db2923238b2eeb41bfab8e3211333c75e369",
+    "listing": {
+      "method": "psapi",
+      "indexed": "2026-11-22T18:00:00Z",
+      "stash": {
+        "name": "Fixture",
+        "x": 0,
+        "y": 0
+      },
+      "account": {
+        "name": "FixtureAccount#0000",
+        "lastCharacterName": "FixtureChar",
+        "language": "en_US",
+        "realm": "pc"
+      },
+      "price": {
+        "type": "~price",
+        "amount": 5,
+        "currency": "chaos"
+      }
+    },
+    "item": {
+      "verified": false,
+      "w": 1,
+      "h": 1,
+      "icon": "",
+      "league": "Covens",
+      "id": "fa44f03f0a12d10c71ac521f44101778526d0a9f51922fb2fb3d237207029bde",
+      "name": "Gale Coil",
+      "typeLine": "Diamond Ring",
+      "baseType": "Diamond Ring",
+      "rarity": "Rare",
+      "identified": true,
+      "ilvl": 84,
+      "frameType": 2,
+      "implicitMods": [
+        "25% increased Global Critical Strike Chance"
+      ],
+      "explicitMods": [
+        "+108 to maximum Life",
+        "+47% to Fire Resistance",
+        "+44% to Cold Resistance",
+        "+26% to Lightning Resistance"
+      ],
+      "extended": {
+        "mods": {
+          "explicit": [
+            {
+              "name": "Virile",
+              "tier": "P1",
+              "level": 44,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_3299347043",
+                  "min": "100",
+                  "max": "114"
+                }
+              ]
+            },
+            {
+              "name": "of Tzteosh",
+              "tier": "S1",
+              "level": 84,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_3372524247",
+                  "min": "46",
+                  "max": "48"
+                }
+              ]
+            },
+            {
+              "name": "of the Ice",
+              "tier": "S2",
+              "level": 72,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_4220027924",
+                  "min": "42",
+                  "max": "45"
+                }
+              ]
+            },
+            {
+              "name": "of the Thunderhead",
+              "tier": "S5",
+              "level": 37,
+              "magnitudes": [
+                {
+                  "hash": "explicit.stat_1671376347",
+                  "min": "24",
+                  "max": "29"
+                }
+              ]
+            }
+          ]
+        },
+        "hashes": {
+          "explicit": [
+            [
+              "explicit.stat_3299347043",
+              [
+                0
+              ]
+            ],
+            [
+              "explicit.stat_3372524247",
+              [
+                1
+              ]
+            ],
+            [
+              "explicit.stat_4220027924",
+              [
+                2
+              ]
+            ],
+            [
+              "explicit.stat_1671376347",
+              [
+                3
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+}
